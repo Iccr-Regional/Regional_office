@@ -6,7 +6,7 @@ function Slider() {
   return (
     <div className="">
       <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
           src="https://www.iccr.gov.in/sites/default/files/Yoga%20flash%20mob%20at%20Buddha%20Point.jpg"
@@ -22,7 +22,7 @@ function Slider() {
           alt="Second slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
           src="https://i.ytimg.com/vi/SiW8P42C0Ck/maxresdefault.jpg"

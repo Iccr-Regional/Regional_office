@@ -3,6 +3,7 @@ import Slider from "./Slider";
 import Flash from "./Flash";
 import RegionalOfficeSection from "./RegionalOfficeSection";
 import Navigation from "./Navigation";
+import BarChart from "./BarChart";
 
 function HomePage() {
   return (
@@ -11,6 +12,7 @@ function HomePage() {
         <Slider/>
         <Flash/>
         <RegionalOfficeSection/>
+        <BarChart/>
     </div>
   );
 }
