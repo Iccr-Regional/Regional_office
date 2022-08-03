@@ -1,0 +1,28 @@
+.markdown img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .hide-navigation{
+    display:none !important;
+  }
+  #responsive-navbar-nav{
+    color: black;
+  }
+  .sh{
+    font-size:medium;
+    position: sticky;
+  }
+  .coloring{
+    color: black;
+  }
+  .fixing{
+    position: absolute;
+    top: 1em;
+    right:2em;
+  }
+  .lfix{
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+  }
