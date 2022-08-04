@@ -5,16 +5,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 function Navigation() {
   return (
-       <Navbar collapseOnSelect expand="lg" bg="dark" variant="success" className="sh p-3 imaging fixing-pos">
-      <Container className="fixing-pos">
+       <Navbar collapseOnSelect expand="lg" bg="dark" variant="success" className="sh p-3 imaging">
+      <Container>
         <Navbar.Brand href="/" className="lfix">
         <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <NavDropdown title="Regional Offices" id="collasible-nav-dropdown">
+            <Nav.Link href="/" className="rfix">Home</Nav.Link>
+            <NavDropdown title="Regional Offices" id="collasible-nav-dropdown" className="rfix">
               <NavDropdown.Item href="/regionaloffice/1">
                 Ahmedabad
               </NavDropdown.Item>
@@ -48,10 +48,10 @@ function Navigation() {
                 Shillong
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#sup">Support</Nav.Link>
-            <Nav.Link href="#contact">Contact us</Nav.Link>
-            <Nav.Link href="/addregionaloffice" className="hide-navigation lfix">Add Regional Office</Nav.Link>
-            <Nav.Link href="/addevent" className="hide-navigation lfix">Add Event</Nav.Link>
+            <Nav.Link href="#sup" className="rfix">Support</Nav.Link>
+            <Nav.Link href="#contact" className="rfix">Contact us</Nav.Link>
+            <Nav.Link href="/addregionaloffice" className="hide-navigation rfix">Add Regional Office</Nav.Link>
+            <Nav.Link href="/addevent" className="hide-navigation rfix">Add Event</Nav.Link>
             <Nav.Link href="/login" className="fixing">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>

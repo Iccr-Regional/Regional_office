@@ -17,12 +17,12 @@
   }
   .lfix{
     position: absolute;
-    top: 2em;
+    top: 1.5em;
     left: 0.5em;
   }
   .fixing{
     position: absolute;
-    top: 3em;
+    top: 2.5em;
     right: 2em;
   }
   .imaging{
