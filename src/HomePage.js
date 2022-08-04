@@ -12,7 +12,7 @@ function HomePage() {
         <Slider/>
         <Flash/>
         <RegionalOfficeSection/>
-        <BarChart/>
+        
     </div>
   );
 }
