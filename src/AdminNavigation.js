@@ -8,7 +8,7 @@ function AdminNavigation() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="sh p-3">
       <Container>
         <Navbar.Brand href="/admin" className="lfix">
-          <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="60px"></img>
+          <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

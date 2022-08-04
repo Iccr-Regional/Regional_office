@@ -3,7 +3,8 @@ import Slider from "./Slider";
 import Flash from "./Flash";
 import RegionalOfficeSection from "./RegionalOfficeSection";
 import Navigation from "./Navigation";
-import BarChart from "./BarChart";
+import Bchart from "./Bchart";
+
 
 function HomePage() {
   return (
@@ -12,7 +13,7 @@ function HomePage() {
         <Slider/>
         <Flash/>
         <RegionalOfficeSection/>
-        
+        <Bchart/>
     </div>
   );
 }

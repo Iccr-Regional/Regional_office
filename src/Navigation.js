@@ -5,10 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 function Navigation() {
   return (
-       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="sh p-3">
-      <Container>
+       <Navbar collapseOnSelect expand="lg" bg="dark" variant="success" className="sh p-3 imaging fixing-pos">
+      <Container className="fixing-pos">
         <Navbar.Brand href="/" className="lfix">
-        <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="60px"></img>
+        <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -43,8 +43,8 @@ function Navigation() {
             </NavDropdown>
             <Nav.Link href="#sup">Support</Nav.Link>
             <Nav.Link href="#contact">Contact us</Nav.Link>
-            <Nav.Link href="/addregionaloffice" className="hide-navigation">Add Regional Office</Nav.Link>
-            <Nav.Link href="/addevent" className="hide-navigation">Add Event</Nav.Link>
+            <Nav.Link href="/addregionaloffice" className="hide-navigation lfix">Add Regional Office</Nav.Link>
+            <Nav.Link href="/addevent" className="hide-navigation lfix">Add Event</Nav.Link>
             <Nav.Link href="/login" className="fixing">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>

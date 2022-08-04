@@ -10,19 +10,31 @@
     color: black;
   }
   .sh{
-    font-size:medium;
-    position: sticky;
+    font-size:large;
   }
   .coloring{
     color: black;
   }
-  .fixing{
-    position: absolute;
-    top: 1em;
-    right:2em;
-  }
   .lfix{
     position: absolute;
-    top: 0.5em;
+    top: 2em;
     left: 0.5em;
+  }
+  .fixing{
+    position: absolute;
+    top: 3em;
+    right: 2em;
+  }
+  .imaging{
+    background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
+    height: 130px;
+  }
+  .imaging-1{
+    background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
+    height: 80px;
+    width: 1000px;
+  }
+  .fixing-pos{
+    position: fixed;
+    top: 0;
   }

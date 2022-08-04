@@ -41,6 +41,7 @@ function App() {
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route component={NotFound} />
+          <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
         </Switch>
         
       </BrowserRouter>
