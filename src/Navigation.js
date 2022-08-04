@@ -15,7 +15,9 @@ function Navigation() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Regional Offices" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/regionaloffice/1">Ahmedabad</NavDropdown.Item>
+              <NavDropdown.Item href="/regionaloffice/1">
+                Ahmedabad
+              </NavDropdown.Item>
               <NavDropdown.Item href="/regionaloffice/2">
                 Bangalure
               </NavDropdown.Item>
@@ -28,15 +30,20 @@ function Navigation() {
               <NavDropdown.Item href="/regionaloffice/5">
                 Jammu
               </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/6">Kolkata</NavDropdown.Item>
+              <NavDropdown.Item href="/regionaloffice/6">
+                Kolkata
+              </NavDropdown.Item>
               <NavDropdown.Item href="/regionaloffice/7">
                 Lucknow
               </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/8">Mumbai</NavDropdown.Item>
+              <NavDropdown.Item href="/regionaloffice/8">
+                Mumbai
+              </NavDropdown.Item>
               <NavDropdown.Item href="/regionaloffice/9">
                 Patna
               </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/10">Pune</NavDropdown.Item>
+              <NavDropdown.Item href="/regionaloffice/10">
+                Pune</NavDropdown.Item>
               <NavDropdown.Item href="/regionaloffice/11">
                 Shillong
               </NavDropdown.Item>
