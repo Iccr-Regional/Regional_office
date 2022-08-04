@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 function Navigation() {
   return (
-       <Navbar collapseOnSelect expand="lg" bg="dark" variant="success" className="sh p-3 imaging">
+       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="sh p-3 imaging">
       <Container>
         <Navbar.Brand href="/" className="lfix">
         <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>

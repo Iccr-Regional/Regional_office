@@ -11,6 +11,7 @@
   }
   .sh{
     font-size:large;
+    color: pink;
   }
   .coloring{
     color: black;
@@ -37,4 +38,15 @@
   .fixing-pos{
     position: fixed;
     top: 0;
+  }
+  .imaging-2{
+    background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
+    /* height: 100%;
+    width: 100%; */
+    /* object-fit: contain; */
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+  }
+  .colours{
+    color: pink;
   }
