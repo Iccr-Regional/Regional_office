@@ -10,6 +10,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^4.4.1",
     "carousel": "^0.0.3",
+    "chart.js": "^3.9.1",
     "font-awesome": "^4.7.0",
     "google-map-react": "^2.2.0",
     "jquery": "~3.4.1",
@@ -31,7 +32,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    
   },
   "eslintConfig": {
     "extends": [
