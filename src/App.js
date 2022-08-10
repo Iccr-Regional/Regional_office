@@ -19,10 +19,15 @@ import ScrollToTop from "./ScrollToTop";
 import AdminHomePage from "./AdminHomePage";
 import SuperAdminAddEvent from "./SuperAdminAddEvent";
 import SuperAdminHomePage from "./SuperAdminHomePage";
+import Support from "./Support";
+import Contact from "./Contact";
+import Navigation1 from "./Navigation1";
+import Footer from "./footer";
 function App() {
   return (
     <Provider>
       <BrowserRouter>
+        {/* <Navigation1/> */}
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={HomePage}/>
@@ -40,10 +45,14 @@ function App() {
           <Route exact path="/addevent" component={AddEvent} />
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
-          <Route component={NotFound} />
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
+          <Route exact path="/support" component={Support}/>
+          <Route exact path="/contact" component={Contact}/>
+          <Route component={NotFound} />
+
+         
         </Switch>
-        
+        <Footer/>
       </BrowserRouter>
     </Provider>
   );

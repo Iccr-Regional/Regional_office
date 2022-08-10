@@ -41,7 +41,7 @@ function AdminNavigation() {
                 Shillong
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#sup">Support</Nav.Link>
+            <Nav.Link href="/support">Support</Nav.Link>
             <Nav.Link href="/contact">Contact us</Nav.Link>
             <Nav.Link href="/addregionaloffice" className="hide-navigation">Add Regional Office</Nav.Link>
             <Nav.Link href="/addevent">Add Event</Nav.Link>

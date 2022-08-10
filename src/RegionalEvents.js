@@ -33,31 +33,7 @@ function RegionalEvents(props) {
         }
         return (
           <>
-          <div>
-             <div className="container text-center my-5">
-            <h1 className="font-weight-light py-5">
-              Current Events
-            </h1>
-            <div className="row d-flex justify-content-around my-5 pt-3">
-              {sortedCurrentEvents.slice(0,2).map((currentEvent) => (
-                <div key={currentEvent.eid} className="col-12 col-md-5 my-2">
-                  <CurrentEventCard currentEvent={currentEvent} />
-                </div>
-              ))}
-            </div>
-          </div>
-            <div className="my-5 text-right">
-              <Link to={{  pathname: "/allcurrentevents",  state: sortedCurrentEvents }}>
-              <button
-                      type="submit"
-                      className="btn btn-dark align-items-right"
-                      style={{ backgroundColor: "black" }}
-                    >
-                      See all current events
-                    </button>
-                </Link>
-            </div>
-          </div>
+  
           
           <div>
             <div className="container text-center my-5">
