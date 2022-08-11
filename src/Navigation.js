@@ -7,14 +7,14 @@ function Navigation(){
   return (
        <Navbar collapseOnSelect expand="lg" bg="dark" variant="primary" className="sh p-3 imaging fixing-pos">
       <Container>
-        <Navbar.Brand href="/" className="">
+        <Navbar.Brand href="/" className="lfix">
         <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/" className="">Home</Nav.Link>
-            <NavDropdown title="Regional Offices" id="collasible-nav-dropdown" className="">
+            <NavDropdown title="Regional Offices" className="" id="collasible-nav-dropdown" >
               <NavDropdown.Item href="/regionaloffice/1">
                 Ahmedabad
               </NavDropdown.Item>
@@ -52,7 +52,7 @@ function Navigation(){
             <Nav.Link href="/contact" className="">Contact us</Nav.Link>
             <Nav.Link href="/addregionaloffice" className="hide-navigation">Add Regional Office</Nav.Link>
             <Nav.Link href="/addevent" className="hide-navigation">Add Event</Nav.Link>
-            <Nav.Link href="/login" className="">Login</Nav.Link>
+            <Nav.Link href="/login" className="fixing">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

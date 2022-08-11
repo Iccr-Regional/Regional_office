@@ -21,7 +21,7 @@ import SuperAdminAddEvent from "./SuperAdminAddEvent";
 import SuperAdminHomePage from "./SuperAdminHomePage";
 import Support from "./Support";
 import Contact from "./Contact";
-import Navigation1 from "./Navigation1";
+import Navigation1 from "./Navigation";
 import Footer from "./footer";
 function App() {
   return (
