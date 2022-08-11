@@ -27,7 +27,7 @@ function App() {
   return (
     <Provider>
       <BrowserRouter>
-        {/* <Navigation1/> */}
+        
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={HomePage}/>
@@ -52,7 +52,7 @@ function App() {
 
          
         </Switch>
-        <Footer/>
+        
       </BrowserRouter>
     </Provider>
   );
