@@ -58,7 +58,7 @@ function Footer()
                     <a href="https://www.instagram.com/iccr_delhi/">
                         <i className="fab fa-instagram text-light h1 d-block"></i></a>
                     <a href="https://iccr.gov.in/home">    
-                        <i className="fab fa-twitter text-light h1 d-block"></i></a>
+                        <i className="fab fa-google text-light h1 d-block"></i></a>
                     <a href="https://www.facebook.com/ICCROfficial">
                         <i className="fab fa-facebook text-light h1 d-block"></i>
                     </a>
