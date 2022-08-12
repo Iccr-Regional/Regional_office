@@ -23,7 +23,7 @@ class AddRegionalOffice extends Component {
     let isSuccessful = true;
     if (isSuccessful) {
       this.setState({
-        submitMessage: `Project published successfully`,
+        submitMessage: `Regional Office published successfully`,
         submitMessageTextColor: "text-info",
       });
     } else {
@@ -139,7 +139,7 @@ class AddRegionalOffice extends Component {
                   <h1 className="font-weight-light text-center my-5">
                     {rname}
                   </h1>
-                </div>
+                  </div>
               </div>
             </div>
           );
