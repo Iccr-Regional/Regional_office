@@ -91,6 +91,10 @@ class AddEvent extends Component {
           return (
             <div className="container-fluid">
               <AdminNavigation/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
               <h1 className="text-center my-5 font-weight-light">
                 Add Event
               </h1>

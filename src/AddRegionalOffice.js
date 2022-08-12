@@ -57,23 +57,16 @@ class AddRegionalOffice extends Component {
           return (
             <div className="container-fluid">
               <SuperAdminNavigation/>
+              <br/>
+              <br/>
+              <br/>
+              
               <h1 className="text-center my-5 font-weight-light">
                 Add Regional Office
               </h1>
               <div className="row px-3 px-lg-5">
                 <div className="col-12 col-lg-6 px-lg-5">
                   <form onSubmit={this.onSubmit.bind(this, handler)}>
-                    <div className="form-group">
-                      <label htmlFor="rimage">Image Url *</label>
-                      <input
-                        type="url"
-                        name="rimage"
-                        id="rimage"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
                     <div className="form-group">
                       <label htmlFor="rname">Name *</label>
                       <input
@@ -97,6 +90,17 @@ class AddRegionalOffice extends Component {
                       />
                     </div>
                     <div className="form-group">
+                      <label htmlFor="rimage">Image Url *</label>
+                      <input
+                        type="url"
+                        name="rimage"
+                        id="rimage"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
                       <label htmlFor="rlocation">Location *</label>
                       <input
                         type="url"
@@ -106,7 +110,7 @@ class AddRegionalOffice extends Component {
                         onChange={this.onChange}
                         required
                       />
-                    </div>
+                    </div>                   
                     <div className="d-flex justify-content-around">
                     <button
                       type="submit"
