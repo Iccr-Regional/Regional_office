@@ -1,5 +1,6 @@
 import React from "react";
 import { Consumer } from "./context";
+import Navigation from "./Navigation";
 
 function PastEventPage(props) {
   return (
@@ -10,6 +11,9 @@ function PastEventPage(props) {
         const pastEvent = events.filter((pastEvent) => pastEvent.eid == eid)[0];
         const {eimg,ename,edesc,etime,edate,rname,enp,ewin} = pastEvent;
         return (
+          <div>
+
+          <Navigation/>
           <div className="container py-5 my-5 markdown">
             <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
@@ -23,6 +27,7 @@ function PastEventPage(props) {
             <h1 className="font-weight-light text-center my-5">Winner: {ewin}</h1>
             <h1 className="font-weight-light text-center my-5">Date: {edate}</h1>
             <h1 className="font-weight-light text-center my-5">Time: {etime}</h1>
+          </div>
           </div>
         );
       }}
