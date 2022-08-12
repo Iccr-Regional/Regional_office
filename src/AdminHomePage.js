@@ -1,16 +1,18 @@
 import React from "react";
 import Slider from "./Slider";
 import Flash from "./Flash";
-import RegionalOfficeSection from "./RegionalOfficeSection";
+import AdminRegionalOfficeSection from "./AdminRegionalOfficePage";
 import AdminNavigation from "./AdminNavigation";
+import AdminCurrentEvents from "./AdminCurrentEvents";
 
 function AdminHomePage() {
   return (
     <div className="">
-        <AdminNavigation top="fixed"/>
+        <AdminNavigation/>
         <Slider/>
         <Flash/>
-        <RegionalOfficeSection/>
+        <AdminCurrentEvents/>
+        <AdminRegionalOfficeSection/>
     </div>
   );
 }

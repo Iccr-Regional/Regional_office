@@ -21,9 +21,11 @@ import SuperAdminAddEvent from "./SuperAdminAddEvent";
 import SuperAdminHomePage from "./SuperAdminHomePage";
 import Support from "./Support";
 import Contact from "./Contact";
-import Navigation1 from "./Navigation";
+import AdminAllCurrentEvents from "./AdminAllCurrentEvents";
+import SuperAdminAllCurrentEvents from "./SuperAdminAllCurrentEvents";
+import SuperAdminAllRegionalOffices from "./SuperAdminAllRegionalOffices";
+import AdminAllRegionalOffices from "./AdminAllRegionalOffices";
 import Footer from "./footer";
-import Navbar from "./Navbar";
 function App() {
   return (
     <Provider>
@@ -36,7 +38,11 @@ function App() {
           <Route exact path="/superadmin" component={SuperAdminHomePage}/>
           <Route exact path="/allpastevents" component={AllPastEvents}/>
           <Route exact path="/allcurrentevents" component={AllCurrentEvents}/>
+          <Route exact path="/admin/allcurrentevents" component={AdminAllCurrentEvents}/>
+          <Route exact path="/superadmin/allcurrentevents" component={SuperAdminAllCurrentEvents}/>
           <Route exact path="/allregionaloffices" component={AllRegionalOffices}/>
+          <Route exact path="/admin/allregionaloffices" component={AdminAllRegionalOffices}/>
+          <Route exact path="/superadmin/allregionaloffices" component={SuperAdminAllRegionalOffices}/>
           <Route exact path="/allfutureevents" component={AllFutureEvents} />
           <Route exact path="/pastevent/:id" component={PastEventPage} />
           <Route exact path="/currentevent/:id" component={CurrentEventPage}/>

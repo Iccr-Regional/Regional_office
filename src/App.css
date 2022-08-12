@@ -135,23 +135,7 @@
 .rfix-1{
   position: absolute;
   bottom: 1.5em;
-  right: 32.5em;
-}
-.rfix-2{
-  position: absolute;
-  bottom: -0.2em;
-  right: -40.5em;
-}
-.rfix-3{
-  position: absolute;
-  bottom: 1.5em;
-  right: 17.5em;
-
-}
-.rfix-4{
-  position: absolute;
-  bottom: 1.5em;
-  right: 10.5em;
+  right: 0em;
 }
 .gradiating-2{
   background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);

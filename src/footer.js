@@ -46,7 +46,7 @@ function Footer()
                 </div>
                 <div className="col-12 col-md-4 text-dark text-justify py-3">
                 <h2 className="text-primary text-center">Address</h2>
-                    <p className="py-3">
+                    <p className="py-3 text-center">
                     ICCR New Delhi<br/>
                     Azad Bhawan Rd,IP Estate, <br/>
                     New Delhi,<br/> 
@@ -55,13 +55,13 @@ function Footer()
                 </div>
                 <div className="col-12 col-md-4 py-3">
                     <h5 className="text-info pb-3">FOLLOW US</h5>
-                    <a href="https://www.instagram.com/iccr_delhi/">
-                        <i className="fab fa-instagram text-light h1 d-block"></i></a>
-                    <a href="https://iccr.gov.in/home">    
-                        <i className="fab fa-google text-light h1 d-block"></i></a>
-                    <a href="https://www.facebook.com/ICCROfficial">
+                    <Link to="https://www.instagram.com/iccr_delhi/">
+                        <i className="fab fa-instagram text-light h1 d-block"></i></Link>
+                    <Link to="https://iccr.gov.in/home">    
+                        <i className="fab fa-google text-light h1 d-block"></i></Link>
+                    <Link to="https://www.facebook.com/ICCROfficial">
                         <i className="fab fa-facebook text-light h1 d-block"></i>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="text-muted py-3">

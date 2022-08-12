@@ -7,7 +7,7 @@ function SuperAdminNavigation() {
   return (
     <Navbar collapseOnSelect expand="lg" className="sh p-3 gradiating fixed-top">
       <Container>
-        <Navbar.Brand href="/superadmin" className="lfix">
+        <Navbar.Brand href="/superadmin" className="">
         <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -45,7 +45,7 @@ function SuperAdminNavigation() {
             <Nav.Link href="/contact">Contact us</Nav.Link>
             <Nav.Link href="/addregionaloffice">Add Regional Office</Nav.Link>
             <Nav.Link href="/addevent">Add Event</Nav.Link>
-            <Nav.Link href="/login" className="fixing">Login</Nav.Link>
+            <Nav.Link href="/login" className="rfix-1">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,8 +1,9 @@
 import React from "react";
 import Slider from "./Slider";
 import Flash from "./Flash";
-import RegionalOfficeSection from "./RegionalOfficeSection";
+import SuperAdminRegionalOfficeSection from "./SuperAdminRegionalOfficeSection";
 import SuperAdminNavigation from "./SuperAdminNavigation";
+import SuperAdminCurrentEvents from "./SuperAdminCurrentEvents";
 
 function SuperAdminHomePage() {
   return (
@@ -10,7 +11,8 @@ function SuperAdminHomePage() {
         <SuperAdminNavigation/>
         <Slider/>
         <Flash/>
-        <RegionalOfficeSection/>
+        <SuperAdminCurrentEvents/>
+        <SuperAdminRegionalOfficeSection/>
     </div>
   );
 }
