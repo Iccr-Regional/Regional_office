@@ -45,22 +45,27 @@ function Footer()
                     </Link> */}
                 </div>
                 <div className="col-12 col-md-4 text-dark text-justify py-3">
-                <h2 className="text-primary text-center">About Us</h2>
+                <h2 className="text-primary text-center">Address</h2>
                     <p className="py-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    ICCR New Delhi<br/>
+                    Azad Bhawan Rd,IP Estate, <br/>
+                    New Delhi,<br/> 
+                    Delhi-110002<br/>
                     </p>
                 </div>
                 <div className="col-12 col-md-4 py-3">
                     <h5 className="text-info pb-3">Social</h5>
                     <a href="https://www.instagram.com/iccr_delhi/">
-                        <i className="fab fa-instagram text-light h1 d-block"></i>
-                        <i className="fab fa-google text-light h1 d-block"></i>
+                        <i className="fab fa-instagram text-light h1 d-block"></i></a>
+                    <a href="https://iccr.gov.in/home">    
+                        <i className="fab fa-google text-light h1 d-block"></i></a>
+                    <a href="https://www.facebook.com/ICCROfficial">
                         <i className="fab fa-facebook text-light h1 d-block"></i>
                     </a>
                 </div>
             </div>
             <div className="text-muted py-3">
-                <p>&copy; Slytherin</p>
+                <p> Copyright &copy; Slytherin 2022</p>
             </div>
         </div>
     </footer>
