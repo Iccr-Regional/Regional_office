@@ -4,7 +4,9 @@ import {Carousel} from "react-bootstrap";
 
 function Slider() {
   return (
-    <div className="">
+    <div className="py-3">
+      <br></br>
+      <br></br>
       <Carousel>
       <Carousel.Item interval={5000}>
         <img

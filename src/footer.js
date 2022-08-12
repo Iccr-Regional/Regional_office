@@ -20,7 +20,7 @@ function Footer()
 {
     return(
     <footer>
-        <div className="container-fluid text-center" style={{backgroundColor:"black"}}>
+        <div className="container-fluid text-center" style={{backgroundColor:"lightblue"}}>
             {/* <div className="py-5">
                 <h2 className="text-light">Interested in working with me?</h2>
                 <Link to="/contact">
@@ -30,22 +30,23 @@ function Footer()
                 </Link>
                 
             </div> */}
-            <div className="py-5">
-                <h2 className="text-light">About Us</h2>
-            </div>
+            {/* <div className="py-5">
+                <h2 className="text-primary">About Us</h2>
+            </div> */}
             <div className="row">
                 <div className="col-12 col-md-4 py-3">
                     <h5 className="text-info pb-3">More Links</h5>
                     {/* <a href="/" className="text-light d-block"></a> */}
-                    <Link to="/" className="text-light d-block">Home</Link>
-                    <Link to="/contact" className="text-light d-block">Contact</Link>
-                    <Link to="/allregionaloffices" className="text-light d-block">Regional Offices</Link>
+                    <Link to="/" className="text-dark d-block">Home</Link>
+                    <Link to="/contact" className="text-dark d-block">Contact</Link>
+                    <Link to="/allregionaloffices" className="text-dark d-block">Regional Offices</Link>
                     {/* <Link to="/write-a-recommendation" className="text-light">
                         Write a recommendation<i className="fas fa-heart text-light"></i>
                     </Link> */}
                 </div>
-                <div className="col-12 col-md-4 text-light text-justify py-3">
-                    <p>
+                <div className="col-12 col-md-4 text-dark text-justify py-3">
+                <h2 className="text-primary text-center">About Us</h2>
+                    <p className="py-3">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                     </p>
                 </div>
@@ -59,7 +60,7 @@ function Footer()
                 </div>
             </div>
             <div className="text-muted py-3">
-                <p>Copyright @ Slytherin</p>
+                <p>&copy; Slytherin</p>
             </div>
         </div>
     </footer>

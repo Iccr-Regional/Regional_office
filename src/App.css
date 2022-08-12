@@ -7,7 +7,7 @@
     display:none !important;
   }
   #responsive-navbar-nav{
-    color: black;
+    color:white;
   }
   .sh{
     font-size:large;
@@ -18,13 +18,13 @@
   }
   .lfix{
     position: absolute;
-    top: 1em;
-    left: 0.5em;
+    top: 0em;
+    left: 0em;
   }
   .rfix{
     position: absolute;
-    top: 1em;
-    right: 0.5em;
+    bottom: 1.0em;
+    right: 1.5em;
   }
   .fixing{
     position: absolute;
@@ -39,12 +39,6 @@
     background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
     height: 80px;
     width: 1000px;
-  }
-  .fixing-pos{
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width:100%;
   }
   .imaging-3{
     background-image: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg);
@@ -111,4 +105,32 @@
   width: 50px;
   border-radius: 10px;
   margin: 0 5px;
+}
+.gradiating{
+  background-image:linear-gradient(to right,orange,lightblue,green);
+  color:black;
+}
+.gradiating-1{
+  background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
+}
+.rfix-1{
+  position: absolute;
+  bottom: 1.5em;
+  right: 32.5em;
+}
+.rfix-2{
+  position: absolute;
+  bottom: -0.2em;
+  right: -40.5em;
+}
+.rfix-3{
+  position: absolute;
+  bottom: 1.5em;
+  right: 17.5em;
+
+}
+.rfix-4{
+  position: absolute;
+  bottom: 1.5em;
+  right: 10.5em;
 }

@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 function SuperAdminNavigation() {
   return (
-    <Navbar collapseOnSelect expand="lg"bg="dark" variant="primary" className="sh p-3 imaging">
+    <Navbar collapseOnSelect expand="lg" className="sh p-3 gradiating fixed-top">
       <Container>
         <Navbar.Brand href="/superadmin" className="lfix">
         <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>

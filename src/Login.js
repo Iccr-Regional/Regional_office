@@ -6,10 +6,10 @@ function Login() {
   return (
     <div>
       <Navigation/>
-      <div className="imaging-2">
+      <div className="gradiating-1">
 
-       <div className="container ">
-        <div className="row my-3 pt-3"> 
+       <div className="container pt-5">
+        <div className="row my-3 pt-5"> 
           <div className="col-sm-0 col-md-3"></div>
           <div className="col-12 col-md-6">
             <div className="card shadow h-100">

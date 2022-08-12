@@ -60,7 +60,7 @@ function BarChart() {
                 position:"top"
                },
                title:{
-                display:true,
+                display:false,
                 text:"No of events conducted by respective Regional Office",
                },
             },
@@ -70,6 +70,7 @@ function BarChart() {
         <div className="container BarChart">
             <div className="row">
                 <div className='col-* col-md-12'>
+                    <h3 className='text-center'>No of events conducted by respective Regional Office</h3>
                    <Bar options={chartOptions} data={chartData}/>
                 </div>
             </div>

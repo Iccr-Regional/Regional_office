@@ -23,6 +23,7 @@ import Support from "./Support";
 import Contact from "./Contact";
 import Navigation1 from "./Navigation1";
 import Footer from "./footer";
+import Navbar from "./Navbar";
 function App() {
   return (
     <Provider>
