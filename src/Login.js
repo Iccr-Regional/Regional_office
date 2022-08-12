@@ -4,14 +4,6 @@ import Navigation from "./Navigation";
 
 function Login() {
   return (
-    <div>
-      <Navigation/>
-      <div className="gradiating-1">
-
-       <div className="container pt-5">
-        <div className="row my-3 pt-5"> 
-          <div className="col-sm-0 col-md-3"></div>
-        <div className="col-12 col-md-6">
       <div className="imaging-2" >
         <br></br><br></br><br></br>
        <div className="container">
@@ -38,7 +30,6 @@ function Login() {
         <div className="col-*"></div>
       </div>
      </div>
-     <div/>
     </div>
     
   );
