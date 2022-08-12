@@ -13,6 +13,8 @@ function RegionalOfficePage(props) {
         const { rimage, rname, rdesc, rlocation } = regionalOffice;
         const rOName = rname;
         return (
+          <div>
+            <Navigation/>
           <div className="container py-5 my-5 markdown">
             <div className="justify-content-center m1">
               <img src={rimage} alt={rname} className="w-100" />
@@ -23,6 +25,7 @@ function RegionalOfficePage(props) {
             <div className="p-5">
                 <RegionalEvents rOName={rOName}/>
             </div>
+          </div>
           </div>
         );
       }}

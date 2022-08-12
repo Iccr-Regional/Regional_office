@@ -153,3 +153,7 @@
   bottom: 1.5em;
   right: 10.5em;
 }
+.gradiating-2{
+  background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
+  height: 450px;
+}
