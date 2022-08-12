@@ -52,7 +52,7 @@ function Footer()
                 </div>
                 <div className="col-12 col-md-4 py-3">
                     <h5 className="text-info pb-3">Social</h5>
-                    <a href="#">
+                    <a href="https://www.instagram.com/iccr_delhi/">
                         <i className="fab fa-instagram text-light h1 d-block"></i>
                         <i className="fab fa-google text-light h1 d-block"></i>
                         <i className="fab fa-facebook text-light h1 d-block"></i>
