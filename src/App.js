@@ -30,7 +30,6 @@ function App() {
   return (
     <Provider>
       <BrowserRouter>
-        
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={HomePage}/>
@@ -55,15 +54,12 @@ function App() {
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
           <Route exact path="/support" component={Support}/>
           <Route exact path="/contact" component={Contact}/>
-          <Route component={NotFound} />
-
-         
+          <Route component={NotFound} />  
         </Switch>
         <Footer/>
       </BrowserRouter>
     </Provider>
   );
 }
-
 export default App;
 
