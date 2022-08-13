@@ -1,0 +1,143 @@
+.markdown img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .hide-navigation{
+    display:none !important;
+  }
+  #responsive-navbar-nav{
+    color:white;
+  }
+  .sh{
+    font-size:large;
+    color: black;
+  }
+  .coloring{
+    color: black;
+  }
+  .lfix{
+    position: absolute;
+    top: 0em;
+    left: 0em;
+  }
+  .rfix4{
+    position: absolute;
+    bottom: 1.0em;
+    right: 1.5em;
+    top: 1.5em;
+    right: 25em;
+  }
+  .rfix3{
+    position: absolute;
+    top: 1.5em;
+    right: 20em;
+  }
+  .rfix2{
+    position: absolute;
+    top: 1.5em;
+    right: 12em;
+  }
+  .rfix1{
+    position: absolute;
+    top: 1.5em;
+    right: 6em;
+
+  }
+  .fixing{
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+  }
+  .imaging{
+    background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
+    height: 100px;
+  }
+  .imaging-1{
+    background-image: url(https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000);
+    height: 80px;
+    width: 1000px;
+  }
+  .imaging-3{
+    background-image: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+   
+  }
+  .imaging-2{
+    background-image: url(./back.jpg);   
+    background-repeat: no-repeat;
+    background-size:100%;
+    
+  }
+  
+  .colours{
+    color: blue;
+  }
+  .colours-1{
+    color: pink;
+    top:50%;
+    bottom: 50%;
+    text-align: center;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .nav-cta{
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+    display: inline-block;
+    background-color: #fff;
+    color:#313131;
+    padding:2rem 2rem;
+    border-radius: 3rem;
+    transition: background-color .5s ease;
+  }
+  .navbar{
+    background-color:#000;
+}
+  
+.navbar.colorChange{
+    background-color:black;
+}
+.page-footer {
+  background-color: skyblue;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-logo {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: deepskyblue;
+}
+.footer-right {
+  display: flex;
+}
+.footer-item {
+  background-color: gray;
+  width: 50px;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+.gradiating{
+  background-image:linear-gradient(to right,orange,lightblue,green);
+  color:black;
+}
+.gradiating-1{
+  background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
+}
+.rfix-1{
+  position: absolute;
+  bottom: 1.5em;
+  right: 0em;
+}
+.gradiating-2{
+  background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
+  height: 450px;
+}
