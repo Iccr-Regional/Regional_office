@@ -24,10 +24,9 @@ function Login() {
       if(response.data.message){
         setloginstatus(response.data.message)
       
-      } else if(response.data[0].username==="admin"  ){
+      } else if(response.data[0].username==="superadmin" && response.data[0].password==="superadmin" ){
         setloginstatus(response.data[0].username);
-      
-         history.push('/superadmin')
+        history.push('/superadmin')
       }else{
         setloginstatus(response.data[0].username);
         history.push('/admin')
@@ -44,7 +43,7 @@ function Login() {
             <div className="card shadow h-100">
                 
                     <img src="https://cracku.in/latest-govt-jobs/wp-content/uploads/2020/04/ICCR-Logo.jpg" width="200" height="300" className="center"/>
-                    <div className="px-5 text-center #dc3545">{loginstatus}</div>
+                    <div className="px-5 text-center" style={{color:"red"}}>{loginstatus}</div>
                     
                     <div className="form-group px-5 colours"> 
                       <input type="text" className="form-control" name="name" placeholder="User Name" 

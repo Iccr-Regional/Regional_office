@@ -45,7 +45,7 @@ function SuperAdminNavigation() {
             <Nav.Link href="/contact">Contact us</Nav.Link>
             <Nav.Link href="/addregionaloffice">Add Regional Office</Nav.Link>
             <Nav.Link href="/addevent">Add Event</Nav.Link>
-            <Nav.Link href="/login" className="rfix-1">Login</Nav.Link>
+            <Nav.Link href="/login" className="rfix-1">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
