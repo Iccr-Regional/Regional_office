@@ -50,8 +50,7 @@ function Navigation(){
              </NavDropdown>
              <Nav.Link href="/support" className="">Support</Nav.Link>
              <Nav.Link href="/contact" className="">Contact us</Nav.Link>
-             <Nav.Link href="/addregionaloffice" className="hide-navigation">Add Regional Office</Nav.Link>
-             <Nav.Link href="/addevent" className="hide-navigation">Add Event</Nav.Link>
+             
              <Nav.Link href="/login" className="rfix">Login</Nav.Link>
            </Nav>
          </Navbar.Collapse>

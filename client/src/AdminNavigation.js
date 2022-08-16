@@ -43,7 +43,6 @@ function AdminNavigation() {
             </NavDropdown>
             <Nav.Link href="/support">Support</Nav.Link>
             <Nav.Link href="/contact">Contact us</Nav.Link>
-            <Nav.Link href="/addregionaloffice" className="hide-navigation">Add Regional Office</Nav.Link>
             <Nav.Link href="/addevent">Add Event</Nav.Link>
             <Nav.Link href="/login" className="fixing">Login</Nav.Link>
           </Nav>
