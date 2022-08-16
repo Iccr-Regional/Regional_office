@@ -86,7 +86,7 @@ app.post('/validate',(req,res)=>{
         if(result.length >0 ) {
             res.send(result);
         } else{
-            res.send({message: "Wrong username/pasword  combination"});
+            res.send({message: "Wrong username/password  combination"});
 
         }
     });

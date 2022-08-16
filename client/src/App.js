@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter , Route, Switch } from "react-router-dom";
 import PastEventPage from "./PastEventPage";
 import CurrentEventPage from "./CurrentEventPage";
 import AllCurrentEvents from "./AllCurrentEvents";
@@ -26,6 +26,7 @@ import SuperAdminAllCurrentEvents from "./SuperAdminAllCurrentEvents";
 import SuperAdminAllRegionalOffices from "./SuperAdminAllRegionalOffices";
 import AdminAllRegionalOffices from "./AdminAllRegionalOffices";
 import Footer from "./footer";
+
 function App() {
   return (
     <Provider>
@@ -48,7 +49,7 @@ function App() {
           <Route exact path="/futureevent/:id" component={FutureEventPage} />
           <Route exact path="/regionaloffice/:id" component={RegionalOfficePage} />
           <Route exact path="/login" component={Login}/>
-          <Route exact path="/addevent" component={AddEvent} />
+          <Route exact path="/addevent" component={ () => <AddEvent authorized={false} />}  />
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>

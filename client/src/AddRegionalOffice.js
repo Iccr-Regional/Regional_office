@@ -1,29 +1,65 @@
 import React, { Component } from "react";
 import { Consumer } from "./context";
-import { v4 as uuid } from "uuid";
 import SuperAdminNavigation from "./SuperAdminNavigation";
+import axios from "axios";
 
 class AddRegionalOffice extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      rimage: "",
+    rname: "",
+    submitMessage: "",
+    submitMessageTextColor: "", 
+    rid:"",
+    rdesc:"",
+    rlocation:"",
+    };
+  }
+
+
+  publishData=()=> {
+    
+      axios.post('http://localhost:3001/create',{
+      rid:parseInt(this.state.rid,10),
+      rname:this.state.rname,
+      rimage:this.state.rimage,
+      rlocation:this.state.rlocation,
+      rdesc:this.state.rdesc
+    }).then(()=>{
+      console.log("success");
+    })
+    .catch(err =>{
+      console.log(err)
+    });  
+}
   state = {
     rimage: "",
     rname: "",
+    rid:"",
+    rdesc:"",
+    rlocation:"",
     submitMessage: "",
     submitMessageTextColor: "",
   };
 
-  onChange = (event) => {
+  handleonChange = (event) => {
+    console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
 
-  onSubmit = (handler, event) => {
+  onSubmit = event  => {
     event.preventDefault();
-
+    console.log(this.state.rid);
+    console.log("on submited");
+    this.publishData();
     let isSuccessful = true;
     if (isSuccessful) {
       this.setState({
-        submitMessage: `Regional Office published successfully`,
+        submitMessage: `Project published successfully`,
         submitMessageTextColor: "text-info",
       });
     } else {
@@ -34,12 +70,12 @@ class AddRegionalOffice extends Component {
     }
 
     const newRegionalOffice = {
-      rid: uuid(),
+      rid: this.state.rid,
       rimage: this.state.rimage,
       rname: this.state.rname,
     };
 
-    handler("ADD_REGIONAL_OFFICE",newRegionalOffice);
+   // handler("ADD_REGIONAL_OFFICE",newRegionalOffice);
   };
 
   render() {
@@ -52,7 +88,7 @@ class AddRegionalOffice extends Component {
             submitMessage,
             submitMessageTextColor,
           } = this.state;
-          const { handler } = value;
+      
 
           return (
             <div className="container-fluid">
@@ -66,15 +102,30 @@ class AddRegionalOffice extends Component {
               </h1>
               <div className="row px-3 px-lg-5">
                 <div className="col-12 col-lg-6 px-lg-5">
-                  <form onSubmit={this.onSubmit.bind(this, handler)}>
+                  <form onSubmit={this.onSubmit}>
+
+                  <div className="form-group">
+                      <label htmlFor="rid">Id *</label>
+                      <input
+                        type="number"
+                        name="rid"
+                        id="rid"
+                        value={this.state.rid}
+                        className="form-control"
+                        onChange={this.handleonChange}
+                        required
+                      />
+                    </div>
+
                     <div className="form-group">
                       <label htmlFor="rname">Name *</label>
                       <input
                         type="text"
                         name="rname"
                         id="rname"
+                        value={this.state.rname}
                         className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleonChange}
                         required
                       />
                     </div>
@@ -84,8 +135,9 @@ class AddRegionalOffice extends Component {
                         type="text"
                         name="rdesc"
                         id="rdesc"
+                        value={this.state.rdesc}
                         className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleonChange}
                         required
                       />
                     </div>
@@ -95,8 +147,9 @@ class AddRegionalOffice extends Component {
                         type="url"
                         name="rimage"
                         id="rimage"
+                        value={this.state.rimage}
                         className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleonChange}
                         required
                       />
                     </div>
@@ -106,8 +159,9 @@ class AddRegionalOffice extends Component {
                         type="url"
                         name="rlocation"
                         id="rlocation"
+                        value={this.state.rlocation}
                         className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleonChange}
                         required
                       />
                     </div>                   
