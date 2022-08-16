@@ -4,6 +4,7 @@ import Flash from "./Flash";
 import AdminRegionalOfficeSection from "./AdminRegionalOfficePage";
 import AdminNavigation from "./AdminNavigation";
 import AdminCurrentEvents from "./AdminCurrentEvents";
+import BarChart from "./BarChart";
 
 function AdminHomePage() {
   return (
@@ -13,8 +14,10 @@ function AdminHomePage() {
         <Flash/>
         <AdminCurrentEvents/>
         <AdminRegionalOfficeSection/>
+        <BarChart/>
     </div>
   );
 }
+
 
 export default AdminHomePage;
