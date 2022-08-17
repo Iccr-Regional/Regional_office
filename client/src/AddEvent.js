@@ -30,6 +30,7 @@ class AddEvent extends Component {
       ewin: "",
       elocation:"",
       evid:"",
+      likes:"",
       submitMessage: "",
       submitMessageTextColor: "",
     };
@@ -47,6 +48,7 @@ class AddEvent extends Component {
     ewin: "",
     elocation:"",
     evid:"",
+    likes: "",
     submitMessage: "",
     submitMessageTextColor: "",
   };
@@ -76,7 +78,8 @@ class AddEvent extends Component {
       ewin:this.state.ewin,
       eimg:this.state.eimg,
       elocation:this.state.elocation,
-      evid:this.state.evid
+      evid:this.state.evid,
+      likes:this.state.likes
       
   }).then(()=>{
     console.log("success");
@@ -117,6 +120,7 @@ onSubmit = event => {
     ewin: this.state.ewin,
     elocation: this.state.elocation,
     evid: this.state.evid,
+    likes: this.state.likes,
   };
 
     //handler("ADD_EVENT", newEvent);
@@ -138,6 +142,7 @@ onSubmit = event => {
             ewin,
             elocation,
             evid,
+            likes,
             submitMessage,
             submitMessageTextColor,
           } = this.state;

@@ -46,9 +46,10 @@ app.post('/insertevent',(req,res) => {
     const eimg=req.body.eimg;
     const elocation=req.body.elocation;
     const evid=req.body.evid;
+    const likes=req.body.likes;
     console.log(req.body)
 
-    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,enp,ewin,eimg,elocation,evid)VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,enp,ewin,eimg,elocation,evid,likes)VALUES (?,?,?,?,?,?,?,?,?,?,?,0)',
     [eid,ename,rid,edesc,edate,etime,enp,ewin,eimg,elocation,evid],
     (err,result) =>{
         if(err){
@@ -76,7 +77,7 @@ app.post('/validate',(req,res)=>{
     const password = req.body.password;
 
 
-    db.query("SELECT * FROM login WHERE username= ? AND password=?",
+    db.query("SELECT * FROM login WHERE username = ? AND password = ?",
     [username,password],
     (err,result)=>{
         if(err){
@@ -85,7 +86,7 @@ app.post('/validate',(req,res)=>{
         else if(result.length>0 ) {
             res.send(result);
         } else{
-            res.send({message: "Wrong username/password  combination"});
+            res.send({message: "Wrong username/password combination"});
 
         }
     });
