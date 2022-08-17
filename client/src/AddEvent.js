@@ -300,6 +300,7 @@ onSubmit = event => {
                         onChange={this.handleonChange}
                       />
                     </div>
+                    
                     <SimpleMDE
                       onChange={this.onBodyChange}
                       options={{
