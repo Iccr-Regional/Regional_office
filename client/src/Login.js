@@ -23,11 +23,14 @@ function Login() {
       
       if(response.data.message){
         setloginstatus(response.data.message)
-      }
-      else if(response.data[0].username==="admin"  ){
+      
+      } 
+      else if(response.data[0].username==="superadmin" && response.data[0].password==="superadmin" ){
         setloginstatus(response.data[0].username);
         history.push('/superadmin')
-      }else{
+      }
+      else{
+      
         setloginstatus(response.data[0].username);
         history.push('/admin')
       }
