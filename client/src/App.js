@@ -32,6 +32,7 @@ function App() {
     <Provider>
       <BrowserRouter>
         <ScrollToTop />
+       
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/admin" component={AdminHomePage}/>
@@ -49,14 +50,15 @@ function App() {
           <Route exact path="/futureevent/:id" component={FutureEventPage} />
           <Route exact path="/regionaloffice/:id" component={RegionalOfficePage} />
           <Route exact path="/login" component={Login}/>
-          <Route exact path="/addevent" component={ () => <AddEvent authorized={false} />}  />
+          <Route exact path="/addevent" component={AddEvent}  />
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
           <Route exact path="/support" component={Support}/>
           <Route exact path="/contact" component={Contact}/>
           <Route component={NotFound} />  
-        </Switch>
+        </Switch>  
+
         <Footer/>
       </BrowserRouter>
     </Provider>

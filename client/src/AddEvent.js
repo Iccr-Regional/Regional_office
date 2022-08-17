@@ -13,10 +13,10 @@ class AddEvent extends Component {
  
 
   constructor(props){
-    super(props);
-    if(!(this.props.authorized)){
+       super(props);
+   /* if(!this.props.authorized){
       return (< Redirect to="/login" />);
-    }
+    }  */
     this.state = {
       eid:"",
       ename: "",
