@@ -9,10 +9,8 @@ function AllRegionalOffices() {
   const [regionalOffice,setregionaloffice]=useState([]);
   const Display = ()=>{
     Axios.get('http://localhost:3001/employees').then((response)=>{
-      console.log("HEllo Harsha")
       console.log(response.data);
       setregionaloffice(response.data);
-      console.log(regionalOffice,"Set!!!!!");
     }).catch(err=>{
       console.log(err)
     });
