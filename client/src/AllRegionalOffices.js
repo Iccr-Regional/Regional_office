@@ -8,17 +8,15 @@ import { getByDisplayValue } from "@testing-library/react";
 function AllRegionalOffices() {
   const [regionalOffice,setregionaloffice]=useState([]);
   const Display = ()=>{
-    Axios.get('http://localhost:3001/employees').then((response)=>{
-      console.log("HEllo Harsha")
+    Axios.get('http://localhost:3001/getregionaloffice').then((response)=>{
       console.log(response.data);
       setregionaloffice(response.data);
-      console.log(regionalOffice,"Set!!!!!");
     }).catch(err=>{
       console.log(err)
     });
   };
 
- useEffect(()=>{//THis is used for 
+ useEffect(()=>{
   Display();
  },[])
   return (
