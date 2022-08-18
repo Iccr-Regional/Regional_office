@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RegionalOfficeCard from "./RegionalOfficeCard";
 import { Consumer } from "./context";
 import { Link } from "react-router-dom";
-function RegionalOfficeSection() {
+import Axios from 'axios';
+import { useState } from "react";
+
+function RegionalOfficeSection()
+
+{
+  const [regionalOffice,setregionaloffice]=useState([]);
+  const Display = ()=>{
+    Axios.get('http://localhost:3001/getregionaloffice').then((response)=>{
+      console.log(response.data);
+      setregionaloffice(response.data);
+    }).catch(err=>{
+      console.log(err)
+    });
+  };
+
+ useEffect(()=>{
+  Display();
+ },[])
   return (
     <Consumer>
       {(value) => {
@@ -13,18 +31,14 @@ function RegionalOfficeSection() {
               Regional Offices
             </h1>
             <div className="row my-5 pt-3">
-              {regionalOffices.slice(0, 3).map((regionalOffice) => (
-                <div key={regionalOffice.rid} className="col-12 col-md-4 my-2">
-                  <RegionalOfficeCard regionalOffice={regionalOffice} />
+              {regionalOffice.slice(0, 3).map((office) => (
+                <div key={office.rid} className="col-12 col-md-4 my-2">
+                  <RegionalOfficeCard regionalOffice={office} />
                 </div>
               ))}
             </div>
             <div className="my-5 text-right" >
               <Link to="/allregionaloffices" className="text-dark text-right">
-                {/* <h5>
-                  See all Regional Offices
-                  <i className="fas fa-arrow-right align-middle pl-1"></i>
-                </h5> */}
                 <button
                       type="submit"
                       className="btn btn-dark align-items-right"
