@@ -27,7 +27,7 @@ app.post('/create',(req,res) => {
         if(err){
             console.log(err);
         } else{
-            res.send("values inserted");
+            res.send();
         }
 
     }
@@ -55,14 +55,20 @@ app.post('/insertevent',(req,res) => {
         if(err){
             console.log(err);
         } else{
-            res.send("Events are inserted");
+            res.send();
         }
-
+    
     }
     );
+    db.query('UPDATE nevent SET ne=ne+1 WHERE rid=?',
+    [rid],
+    (err,result) =>{
+        if(err){
+            console.log(err);}
+    });
 });
 
-app.get('/employees',(req,res)=>{
+app.get('/getregionaloffice',(req,res)=>{
     db.query("SELECT * from rooffice",(err,result)=>{
         if(err){
             console.log(err);
