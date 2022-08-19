@@ -98,6 +98,48 @@ app.post('/validate',(req,res)=>{
     });
 });
 
+app.put("/updateevent", (req,res) => {
+    const eid = req.body.eid;
+    const ename = req.body.ename;
+    const rid = req.body.rid;
+    const edesc = req.body.edesc;
+    const estartdate = req.body.estartdate;
+    const eenddate = req.body.eenddate;
+    const etime = req.body.etime;
+    const ebp = req.body.ebp;
+    const egp = req.body.egp;
+    const ewin = req.body.ewin;
+    const eimg = req.body.eimg;
+    const elocation = req.body.elocation;
+    const evid = req.body.evid;
+
+    const sqlupdate = "UPDATE event SET ename=?,rid=?,edesc=?,estartdate=?,eenddate=?,etime=?,ebp=?,egp=?,ewin=?,eimg=?,elocation=?,evid=? WHERE eid=? ; ";
+
+    db.query(sqlupdate, [ename,rid,edesc,estartdate,eenddate,etime,ebp,egp,ewin,eimg,elocation,evid,eid],(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        
+    });
+});
+
+app.put("/updateregionaloffice", (req,res) => {
+    const rname = req.body.rname;
+    const rid = req.body.rid;
+    const rdesc = req.body.rdesc;
+    const rimage = req.body.rimage;
+    const rlocation = req.body.rlocation;
+
+    const sqlupdate = "UPDATE rooffice SET rname=?,rdesc=?,rimage=?,rlocation=? WHERE rid=? ; ";
+
+    db.query(sqlupdate, [rname,rdesc,rimage,rlocation,rid],(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        
+    });
+});
+
 app.listen(3001,()=>{
     console.log("server is running on port 3001");
 });

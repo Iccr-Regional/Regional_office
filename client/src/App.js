@@ -14,6 +14,7 @@ import AllRegionalOffices from "./AllRegionalOffices";
 import RegionalOfficePage from "./RegionalOfficePage";
 import AddEvent from "./AddEvent";
 import Forget from "./Forget";
+import EditEvent from "./EditEvent";
 import AddRegionalOffice from "./AddRegionalOffice";
 import Login from "./Login";
 import ScrollToTop from "./ScrollToTop";
@@ -29,12 +30,13 @@ import AdminAllRegionalOffices from "./AdminAllRegionalOffices";
 import Register from "./register";
 import loading from "./loading";
 import background from "./background";
+import Footer from "./footer";
+import EditRegionaloffice from "./EditRegionaloffice";
 function App() {
   return (
     <Provider>
       <BrowserRouter>
         <ScrollToTop />
-       
         <Switch>
           <Route exact path="/" component={loading} />
           <Route exact path="/home" component={HomePage}/>
@@ -54,6 +56,8 @@ function App() {
           <Route exact path="/regionaloffice/:id" component={RegionalOfficePage} />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
+          <Route exact path="/editevent" component={EditEvent}/>
+          <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
