@@ -123,7 +123,22 @@ app.put("/updateevent", (req,res) => {
     });
 });
 
+app.put("/updateregionaloffice", (req,res) => {
+    const rname = req.body.rname;
+    const rid = req.body.rid;
+    const rdesc = req.body.rdesc;
+    const rimage = req.body.rimage;
+    const rlocation = req.body.rlocation;
 
+    const sqlupdate = "UPDATE rooffice SET rname=?,rdesc=?,rimage=?,rlocation=? WHERE rid=? ; ";
+
+    db.query(sqlupdate, [rname,rdesc,rimage,rlocation,rid],(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        
+    });
+});
 
 app.listen(3001,()=>{
     console.log("server is running on port 3001");

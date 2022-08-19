@@ -27,6 +27,7 @@ import SuperAdminAllCurrentEvents from "./SuperAdminAllCurrentEvents";
 import SuperAdminAllRegionalOffices from "./SuperAdminAllRegionalOffices";
 import AdminAllRegionalOffices from "./AdminAllRegionalOffices";
 import Footer from "./footer";
+import EditRegionaloffice from "./EditRegionaloffice";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
           <Route exact path="/editevent" component={EditEvent}/>
+          <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
