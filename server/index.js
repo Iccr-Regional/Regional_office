@@ -98,6 +98,33 @@ app.post('/validate',(req,res)=>{
     });
 });
 
+app.put("/updateevent", (req,res) => {
+    const eid = req.body.eid;
+    const ename = req.body.ename;
+    const rid = req.body.rid;
+    const edesc = req.body.edesc;
+    const estartdate = req.body.estartdate;
+    const eenddate = req.body.eenddate;
+    const etime = req.body.etime;
+    const ebp = req.body.ebp;
+    const egp = req.body.egp;
+    const ewin = req.body.ewin;
+    const eimg = req.body.eimg;
+    const elocation = req.body.elocation;
+    const evid = req.body.evid;
+
+    const sqlupdate = "UPDATE event SET ename=?,rid=?,edesc=?,estartdate=?,eenddate=?,etime=?,ebp=?,egp=?,ewin=?,eimg=?,elocation=?,evid=? WHERE eid=? ; ";
+
+    db.query(sqlupdate, [ename,rid,edesc,estartdate,eenddate,etime,ebp,egp,ewin,eimg,elocation,evid,eid],(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        
+    });
+});
+
+
+
 app.listen(3001,()=>{
     console.log("server is running on port 3001");
 });

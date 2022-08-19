@@ -13,6 +13,7 @@ import AllFutureEvents from "./AllFutureEvents";
 import AllRegionalOffices from "./AllRegionalOffices";
 import RegionalOfficePage from "./RegionalOfficePage";
 import AddEvent from "./AddEvent";
+import EditEvent from "./EditEvent";
 import AddRegionalOffice from "./AddRegionalOffice";
 import Login from "./Login";
 import ScrollToTop from "./ScrollToTop";
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/regionaloffice/:id" component={RegionalOfficePage} />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
+          <Route exact path="/editevent" component={EditEvent}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
