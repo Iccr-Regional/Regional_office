@@ -1,5 +1,7 @@
 import React from "react";
 import { Consumer } from "./context";
+import Footer from "./footer";
+import Like from "./Like";
 import Navigation from "./Navigation";
 function CurrentEventPage(props) {
   return (
@@ -14,6 +16,7 @@ function CurrentEventPage(props) {
 
           <Navigation/>
           <div className="container py-5 my-5 markdown">
+            <Like/>
             <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
                 <img src={eimg} alt={ename} className="w-100" />
@@ -25,6 +28,7 @@ function CurrentEventPage(props) {
             <h1 className="font-weight-light text-center my-5">{edate}</h1>
             <h1 className="font-weight-light text-center my-5">{etime}</h1>
           </div>
+          <Footer/>
           </div>
         );
       }}

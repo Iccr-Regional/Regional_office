@@ -1,7 +1,9 @@
 import React from "react";
 import { Consumer } from "./context";
+import Like from "./Like";
 import Navigation
 from "./Navigation";
+import Footer from "./footer";
 function FutureEventPage(props) {
   return (
     <Consumer>
@@ -14,6 +16,7 @@ function FutureEventPage(props) {
           <div>
             <Navigation/>
           <div className="container py-5 my-5 markdown">
+            <Like/>
             <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
                 <img src={eimg} alt={ename} className="w-100" />
@@ -24,6 +27,7 @@ function FutureEventPage(props) {
             <h1 className="font-weight-light text-center my-5">{edesc}</h1>
             <h1 className="font-weight-light text-center my-5">{edate} {etime}</h1>
           </div>
+          <Footer/>
           </div>
         );
       }}

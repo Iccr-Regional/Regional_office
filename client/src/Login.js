@@ -37,7 +37,10 @@ function Login() {
     });
   }; 
   return (
-      <div className="imaging-2" >
+      <div>
+            <video loop autoPlay muted id="bg-video">
+                <source src={require("./video.mp4.mp4")} type="video/mp4"/>
+            </video>
         <br></br><br></br><br></br>
        <div className="container">
         <div className="row pt-3"> 
@@ -67,8 +70,8 @@ function Login() {
                           <button type="submit" className="btn btn-primary btn-block" onClick={validation}>Sign In</button>
                         </div>
                     </div>
-                    <div className="form-group px-5"> <Link to="/" className="colours">Forget password?</Link> </div> 
-                   
+                    <div className="form-group px-5"> <Link to="/forget" className="colours">Forget password?</Link> </div> 
+                    <div className="form-group px-5"> <Link to="/register" className="colours">Register</Link> </div> 
             </div>
           </div>
           

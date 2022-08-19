@@ -13,6 +13,7 @@ import AllFutureEvents from "./AllFutureEvents";
 import AllRegionalOffices from "./AllRegionalOffices";
 import RegionalOfficePage from "./RegionalOfficePage";
 import AddEvent from "./AddEvent";
+import Forget from "./Forget";
 import AddRegionalOffice from "./AddRegionalOffice";
 import Login from "./Login";
 import ScrollToTop from "./ScrollToTop";
@@ -25,8 +26,9 @@ import AdminAllCurrentEvents from "./AdminAllCurrentEvents";
 import SuperAdminAllCurrentEvents from "./SuperAdminAllCurrentEvents";
 import SuperAdminAllRegionalOffices from "./SuperAdminAllRegionalOffices";
 import AdminAllRegionalOffices from "./AdminAllRegionalOffices";
-import Footer from "./footer";
-
+import Register from "./register";
+import loading from "./loading";
+import background from "./background";
 function App() {
   return (
     <Provider>
@@ -34,7 +36,8 @@ function App() {
         <ScrollToTop />
        
         <Switch>
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" component={loading} />
+          <Route exact path="/home" component={HomePage}/>
           <Route exact path="/admin" component={AdminHomePage}/>
           <Route exact path="/superadmin" component={SuperAdminHomePage}/>
           <Route exact path="/allpastevents" component={AllPastEvents}/>
@@ -56,10 +59,12 @@ function App() {
           <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
           <Route exact path="/support" component={Support}/>
           <Route exact path="/contact" component={Contact}/>
+          <Route exact path="/register" component={Register}/>
+          <Route exact path="/forget" component={Forget}/>
           <Route component={NotFound} />  
         </Switch>  
 
-        <Footer/>
+
       </BrowserRouter>
     </Provider>
   );

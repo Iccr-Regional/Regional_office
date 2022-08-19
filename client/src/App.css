@@ -46,7 +46,7 @@
   }
   .fixing{
     position: absolute;
-    top: 1.5em;
+    bottom: 1.5em;
     right: 2em;
   }
   .imaging{
@@ -66,9 +66,12 @@
   }
   .imaging-2{
     background-image: url(./back.jpg);   
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size:100%;
-    
+  }
+  .sizing{
+    color: rgb(229, 196, 196);
+    font-weight: bold;
   }
   
   .colours{
@@ -126,8 +129,9 @@
   margin: 0 5px;
 }
 .gradiating{
-  background-image:linear-gradient(to right,orange,lightblue,green);
+  background-image:linear-gradient(to right,rgb(199, 65, 7),rgb(10, 172, 227),rgb(5, 108, 5));
   color:black;
+  font-size: large;
 }
 .gradiating-1{
   background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
@@ -140,4 +144,20 @@
 .gradiating-2{
   background-image: linear-gradient(to right,rgb(187, 39, 64),rgb(42, 145, 171),yellow);
   height: 450px;
+}
+#bg-video{
+  object-fit: cover;
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+.aligning{
+  height:50%;
+  color:palevioletred;
+  text-align: center;
+  top:50px;
+  
 }

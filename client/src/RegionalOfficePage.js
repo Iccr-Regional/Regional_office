@@ -1,4 +1,5 @@
 import React from "react";
+import BarChart1 from "./BarChart1";
 import { Consumer } from "./context";
 import Navigation from "./Navigation";
 import RegionalEvents from "./RegionalEvents";;
@@ -25,6 +26,7 @@ function RegionalOfficePage(props) {
             <div className="p-5">
                 <RegionalEvents rOName={rOName}/>
             </div>
+            <BarChart1/>
           </div>
           </div>
         );

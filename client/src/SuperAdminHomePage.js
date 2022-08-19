@@ -4,7 +4,7 @@ import Flash from "./Flash";
 import SuperAdminRegionalOfficeSection from "./SuperAdminRegionalOfficeSection";
 import SuperAdminNavigation from "./SuperAdminNavigation";
 import SuperAdminCurrentEvents from "./SuperAdminCurrentEvents";
-
+import Footer from "./footer";
 function SuperAdminHomePage() {
   return (
     <div className="">
@@ -13,6 +13,7 @@ function SuperAdminHomePage() {
         <Flash/>
         <SuperAdminCurrentEvents/>
         <SuperAdminRegionalOfficeSection/>
+        <Footer/>
     </div>
   );
 }

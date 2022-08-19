@@ -26,6 +26,7 @@
     "react-router-dom": "^5.3.3",
     "react-scripts": "^5.0.1",
     "react-simplemde-editor": "^5.0.2",
+    "react-spinkit": "^3.0.0",
     "recharts": "^2.1.13",
     "styled-components": "^5.3.5",
     "uuid": "^7.0.3",

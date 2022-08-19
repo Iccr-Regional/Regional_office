@@ -143,6 +143,8 @@ onSubmit = event => {
             elocation,
             evid,
             likes,
+            engp,
+            enbp,
             submitMessage,
             submitMessageTextColor,
           } = this.state;
@@ -252,6 +254,28 @@ onSubmit = event => {
                       />
                     </div>
                     <div className="form-group">
+                      <label htmlFor="enp">No.of girls participated </label>
+                      <input
+                        type="number"
+                        name="engp"
+                        id="engp"
+                        value={this.state.enp}
+                        className="form-control"
+                        onChange={this.handleonChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="enp">No.of boys participated </label>
+                      <input
+                        type="number"
+                        name="enbp"
+                        id="enbp"
+                        value={this.state.enp}
+                        className="form-control"
+                        onChange={this.handleonChange}
+                      />
+                    </div>
+                    <div className="form-group">
                       <label htmlFor="ewin">Winner </label>
                       <input
                         type="text"
@@ -339,6 +363,12 @@ onSubmit = event => {
                   </h1>
                   <h1 className="font-weight-light text-center">
                     {edate} {etime}
+                  </h1>
+                  <h1 className="font-weight-light text-center">
+                    {edesc}
+                  </h1>
+                  <h1 className="font-weight-light text-center">
+                    {engp} {enbp}
                   </h1>
                 </div>
               </div>

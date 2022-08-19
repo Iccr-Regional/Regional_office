@@ -5,7 +5,7 @@ import AdminRegionalOfficeSection from "./AdminRegionalOfficeSection";
 import AdminNavigation from "./AdminNavigation";
 import AdminCurrentEvents from "./AdminCurrentEvents";
 import BarChart from "./BarChart";
-
+import Footer from "./footer";
 function AdminHomePage() {
   return (
     <div className="">
@@ -15,6 +15,7 @@ function AdminHomePage() {
         <AdminCurrentEvents/>
         <AdminRegionalOfficeSection/>
         <BarChart/>
+        <Footer/>
     </div>
   );
 }
