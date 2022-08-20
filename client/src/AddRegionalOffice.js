@@ -107,7 +107,20 @@ class AddRegionalOffice extends Component {
               <div className="row px-3 px-lg-5">
                 <div className="col-12 col-lg-6 px-lg-5">
                   <form onSubmit={this.onSubmit}>
-
+                  <div className="form-group">
+                      <br/><br/>
+                      <label htmlFor="eimg">Image Url *</label><br/>
+                      <a href="https://postimages.org/" target="_blank" className=" text-right">Click here to upload images</a>
+                      <p className="text-left colors">Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
+                      <input
+                        type="url"
+                        name="eimg"
+                        id="eimg"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                  </div>  
                   <div className="form-group">
                       <label htmlFor="rid">Id *</label>
                       <input
@@ -115,7 +128,7 @@ class AddRegionalOffice extends Component {
                         name="rid"
                         id="rid"
                         value={this.state.rid}
-                        className="form-control"
+                        className="form-control colors"
                         onChange={this.handleonChange}
                         required
                       />
@@ -128,7 +141,7 @@ class AddRegionalOffice extends Component {
                         name="rname"
                         id="rname"
                         value={this.state.rname}
-                        className="form-control"
+                        className="form-control colors"
                         onChange={this.handleonChange}
                         required
                       />
@@ -140,7 +153,7 @@ class AddRegionalOffice extends Component {
                         name="rdesc"
                         id="rdesc"
                         value={this.state.rdesc}
-                        className="form-control"
+                        className="form-control colors"
                         onChange={this.handleonChange}
                         required
                       />
@@ -152,7 +165,7 @@ class AddRegionalOffice extends Component {
                         name="rimage"
                         id="rimage"
                         value={this.state.rimage}
-                        className="form-control"
+                        className="form-control colors"
                         onChange={this.handleonChange}
                         required
                       />
@@ -164,7 +177,7 @@ class AddRegionalOffice extends Component {
                         name="rlocation"
                         id="rlocation"
                         value={this.state.rlocation}
-                        className="form-control"
+                        className="form-control colors"
                         onChange={this.handleonChange}
                         required
                       />
