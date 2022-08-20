@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "./context";
 import SuperAdminNavigation from "./SuperAdminNavigation";
 import axios from "axios";
+import SimpleMDE from "react-simplemde-editor";
 
 class AddRegionalOffice extends Component {
 
@@ -148,6 +149,7 @@ class AddRegionalOffice extends Component {
                     </div>
                     <div className="form-group">
                       <label htmlFor="rdesc">About *</label>
+
                       <input
                         type="text"
                         name="rdesc"
@@ -157,6 +159,7 @@ class AddRegionalOffice extends Component {
                         onChange={this.handleonChange}
                         required
                       />
+
                     </div>
                     <div className="form-group">
                       <label htmlFor="rimage">Image Url *</label>
