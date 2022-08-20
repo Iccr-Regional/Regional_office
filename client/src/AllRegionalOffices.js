@@ -32,7 +32,7 @@ function AllRegionalOffices() {
               All Regional Offices
             </h1>
             <div className="row my-4 pt-4">
-              {regionalOffices.map((office) => (
+              {regionalOffice.map((office) => (
                 <div key={office.rid} className="col-12 col-md-6 py-3">
                   <RegionalOfficeCard regionalOffice={office} />
                 </div>
