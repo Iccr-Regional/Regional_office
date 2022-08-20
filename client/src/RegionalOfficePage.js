@@ -1,7 +1,9 @@
 import React from 'react'
+import BarChart1  from './BarChart1';
 import { useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import RegionalEvents from "./RegionalEvents";
+
 
 const RegionalOfficePage = (props) => {
   const id = props.match.params.id;
@@ -22,6 +24,7 @@ const RegionalOfficePage = (props) => {
         <RegionalEvents rOName={regionalOffice.rname} />
       </div>
     </div>
+    <BarChart1/>
   </div>
   )
 }

@@ -140,6 +140,24 @@ app.put("/updateregionaloffice", (req,res) => {
     });
 });
 
+app.get('/chart1',(req,res)=>{
+    db.query("SELECT ne from nevent",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+app.get('/chart2',(req,res)=>{
+    db.query("SELECT EXTRACT(year FROM edate) AS year, SUM(ebp) AS boys,SUM(egp) as girls FROM event GROUP BY EXTRACT(year FROM edate)",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 app.listen(3001,()=>{
     console.log("server is running on port 3001");
 });

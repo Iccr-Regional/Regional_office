@@ -17,6 +17,24 @@ ChartJs.register(
     Tooltip,
     Legend 
 );
+ const ChartOptions={
+    indexAxis:'x',
+    elements:{
+        bar:{
+            borderWidth:2,
+        },
+    },
+    responsive:true,
+    plugins:{
+       legend:{
+        position:"top"
+       },
+       title:{
+        display:false,
+        text:"No.of events conducted",
+       },
+    },
+};
 
 function BarChart() {
 
@@ -24,57 +42,48 @@ function BarChart() {
         datasets: [],
     })
 
-    const[chartOptions, setChartOptions]= useState({});
     useEffect(() => {
+        const fetchData=async()=>{
+            const url='http://localhost:3001/chart1'
+            const dataSet1=[];
+         fetch (url).then((data)=>{
+            console.log("Api data",data)
+            const res=data.json();
+            return res
+            }).then((res)=>{
+                console.log("ressss",res)
+                for (const val of res)
+                {
+                    dataSet1.push(val.ne);
+                }
         setChartData({
             labels: ["Delhi University","Ahemadabad","Bengaluru","Guwahati","Jammu","Kolkata","Lucknow","Mumbai","Patna","Pune","Shillong"],
             datasets: [
                 {
-                   label:"Total events conducted", 
-                   data:[120,150,176,120,220,180,170,190,190,270,190],
-                   borderColor:["rgba(53,162,235,1)",
-                   "rgba(20,255,130,1)",
-                   'rgba(255, 99, 132, 1)',
-                   'rgba(54, 54, 255, 1)',
-                   'rgba(255, 206, 86, 1)',
-                   'rgba(75, 192, 192, 1)',
-                   'rgba(153, 102, 255, 1)',
-                   'rgba(245, 0, 0, 1)',
-                   'rgba(0,255,255,1)'],
-                   backgroundColor:["rgba(53,162,235,0.5)",
-                   "rgba(20,255,130,0.5)",
-                   'rgba(255, 99, 132, 0.5)',
-                   'rgba(54, 54, 255, 0.5)',
-                   'rgba(255, 206, 86, 0.5)',
-                   'rgba(75, 192, 192, 0.5)',
-                   'rgba(153, 102, 255, 0.5)',
-                   'rgba(245, 0, 0, 0.5)',
-                   "rgba(0,255,225,0.5)",],
+                   label:["No.of events conducted"], 
+                   data:dataSet1,
+                   borderColor:['rgba(255, 99,132,1)'],
+                   backgroundColor:['rgba(255, 99, 132, 0.5)',],
                 },
             ],
-        });
-        setChartOptions({
-            responsive:true,
-            plugins:{
-               legend:{
-                position:"top"
-               },
-               title:{
-                display:false,
-                text:"No of events conducted by respective Regional Office",
-               },
-            },
-        });
+        })
+        console.log("arrData",dataSet1)
+            }).catch(e=>{
+                console.log("error",e)
+            })
+        }
+        fetchData();
     },[]);
+
     return(
-        <div className="container BarChart">
-            <div className="row">
+        <div className="BarChart container">
+            <div className='row'>
                 <div className='col-* col-md-12'>
-                    <h3 className='text-center'>No of events conducted by respective Regional Office</h3>
-                   <Bar options={chartOptions} data={chartData}/>
+                <h3 className='text-center'>Event</h3>
+                <Bar options={ChartOptions} data={chartData}/>
                 </div>
             </div>
-          
+            
           </div>
         );
 }

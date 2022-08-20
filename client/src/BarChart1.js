@@ -40,12 +40,14 @@ function BarChart() {
 
     const [chartData, setChartData] = useState({
         datasets: [],
-    });
+    })
+
     useEffect(() => {
         const fetchData=async()=>{
-            const url='https://jsonplaceholder.typicode.com/comments'
+            const url='http://localhost:3001/chart2'
             const dataSet1=[];
             const dataSet2=[];
+            const dataSet3=[];
          fetch (url).then((data)=>{
             console.log("Api data",data)
             const res=data.json();
@@ -54,15 +56,16 @@ function BarChart() {
                 console.log("ressss",res)
                 for (const val of res)
                 {
-                    dataSet1.push(val.id);
-                    dataSet2.push(val.postId)
+                    dataSet1.push(val.year);
+                    dataSet2.push(val.boys)
+                    dataSet3.push(val.girls)
                 }
         setChartData({
-            labels: ["2018","2019","2020","2021","2022"],
+            labels:dataSet1,
             datasets: [
                 {
                    label:["Girls Participated"], 
-                   data:dataSet1,
+                   data:dataSet3,
                    borderColor:['rgba(255, 99,132,1)'],
                    backgroundColor:['rgba(255, 99, 132, 0.5)',],
                 },
@@ -74,7 +77,7 @@ function BarChart() {
                 },
             ],
         })
-        console.log("arrData",dataSet1,dataSet2)
+        console.log("arrData",dataSet1,dataSet2,dataSet3)
             }).catch(e=>{
                 console.log("error",e)
             })
@@ -82,9 +85,14 @@ function BarChart() {
         fetchData();
     },[]);
     return(
-        <div className="BarChart">
-            <h3>No.of students participated in a year</h3>
-          <Bar options={ChartOptions} data={chartData}/>
+        <div className="BarChart container">
+            <div className='row'>
+                <div className='col-* col-md-12'>
+                <h3 className='text-center'>No.of students participated in a year</h3>
+          <     Bar options={ChartOptions} data={chartData}/>
+                </div>
+            </div>
+           
           </div>
         );
 }
