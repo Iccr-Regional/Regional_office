@@ -17,54 +17,75 @@ ChartJs.register(
     Tooltip,
     Legend 
 );
+ const ChartOptions={
+    indexAxis:'x',
+    elements:{
+        bar:{
+            borderWidth:2,
+        },
+    },
+    responsive:true,
+    plugins:{
+       legend:{
+        position:"top"
+       },
+       title:{
+        display:false,
+        text:"No.of students participated",
+       },
+    },
+};
 
-function BarChart1() {
+function BarChart() {
 
     const [chartData, setChartData] = useState({
         datasets: [],
-    })
-
-    const[chartOptions, setChartOptions]= useState({});
+    });
     useEffect(() => {
+        const fetchData=async()=>{
+            const url='https://jsonplaceholder.typicode.com/comments'
+            const dataSet1=[];
+            const dataSet2=[];
+         fetch (url).then((data)=>{
+            console.log("Api data",data)
+            const res=data.json();
+            return res
+            }).then((res)=>{
+                console.log("ressss",res)
+                for (const val of res)
+                {
+                    dataSet1.push(val.id);
+                    dataSet2.push(val.postId)
+                }
         setChartData({
             labels: ["2018","2019","2020","2021","2022"],
             datasets: [
                 {
                    label:["Girls Participated"], 
-                   data:[45,55,70,85,87],
-                   borderColor:["rgba(20,255,130,1)"],
-                   backgroundColor:[ "rgba(255,99,132,1)"],
+                   data:dataSet1,
+                   borderColor:['rgba(255, 99,132,1)'],
+                   backgroundColor:['rgba(255, 99, 132, 0.5)',],
                 },
                 {
                 label:["Boys Participated"], 
-                   data:[50,55,60,50,66],
-                   borderColor:["rgba(0,0,255,1)"],
-                   backgroundColor:["rgba(53,162,235,1)"]
+                   data:dataSet2,
+                   borderColor:["rgba(53,162,235,1)"],
+                   backgroundColor:["rgba(53,162,235,0.5)"]
                 },
             ],
-        });
-        setChartOptions({
-            responsive:true,
-            plugins:{
-               legend:{
-                position:"top"
-               },
-               title:{
-                display:false,
-                text:"No.of boys participated",
-               },
-            },
-        });
+        })
+        console.log("arrData",dataSet1,dataSet2)
+            }).catch(e=>{
+                console.log("error",e)
+            })
+        }
+        fetchData();
     },[]);
     return(
-        <div className="container BarChart1">
-            <div className="row">
-                <div className='col-*  col-md-12'>
-                    <h3 className='text-center'>No.of students participated in a year</h3>
-                   <Bar options={chartOptions} data={chartData}/>
-                </div>
-            </div>
+        <div className="BarChart">
+            <h3>No.of students participated in a year</h3>
+          <Bar options={ChartOptions} data={chartData}/>
           </div>
         );
 }
-export default BarChart1;
+export default BarChart;
