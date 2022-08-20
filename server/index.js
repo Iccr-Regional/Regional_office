@@ -123,6 +123,16 @@ app.put("/updateevent", (req,res) => {
     });
 });
 
+app.get("/getEvents",(req,res)=>{
+    db.query("SELECT * from event",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 app.put("/updateregionaloffice", (req,res) => {
     const rname = req.body.rname;
     const rid = req.body.rid;
