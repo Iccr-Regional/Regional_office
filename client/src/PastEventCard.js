@@ -5,7 +5,7 @@ function PastEventCard(props) {
   const { eid, ename, eimg, edate, etime } = props.pastEvent;
   return (
     <div className="card shadow bg-light h-100">
-      <img className="card-img-top" src={eimg} alt={ename} />
+      <img className="card-img-top" src={eimg} alt={ename}  height='00px'/>
       <div className="card-body">
         <h4 className="card-title">{ename}</h4>
         <p className="card-text">{edate} {etime}</p>
