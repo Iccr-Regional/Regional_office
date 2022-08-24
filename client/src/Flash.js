@@ -5,8 +5,8 @@ function Flash() {
     <Consumer>
       {(value) => {
         const {regionalOffices, events}=value;
-        const deletedROArr = regionalOffices.filter((ro) => ro.status == 'n');
-        const deletedEventsArr=events.filter((e)=>e.status=='n');
+        const deletedROArr = regionalOffices.filter((ro) => ro.rstatus == 'n');
+        const deletedEventsArr=events.filter((e)=>e.estatus=='n');
         return (
           <div className="container-fluid my-5 imaging-1">
           <div className="row">
