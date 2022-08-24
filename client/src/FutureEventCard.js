@@ -9,7 +9,7 @@ function FutureEventCard(props) {
       <div className="card-body">
         <h4 className="card-title">{ename}</h4>
         <p className="card-text">{edate} {etime}</p>
-        <Link to={`/futureevent/${eid}`} className="stretched-link"></Link>
+        <Link to={{pathname:`/futureevent/${eid}`,state:{event:props.futureEvent}}} className="stretched-link"></Link>
       </div>
     </div>
   );

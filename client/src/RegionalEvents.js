@@ -5,46 +5,43 @@ import CurrentEventCard from "./CurrentEventCard";
 import { Link } from "react-router-dom";
 import { Consumer } from "./context";
 import image1 from "./image1.png";
+import {useEffect,useState} from "react";
+import Axios from "axios";
+
 function RegionalEvents(props) {
+  const [events,setEvents]=useState([]);
+  const Display = ()=>{
+         Axios.get('http://localhost:3001/getEvents').then((response)=>{
+           console.log(response.data);
+           setEvents(response.data);
+         //  console.log("**",events);
+         }).catch(err=>{
+           console.log(err)
+         });
+        };
+        useEffect(()=>{
+          Display();
+        },[]);
   return (
     <Consumer>
       {(value) => {
         const { rId} =props;
-        const { events } =value;
-        //console.log(events);
+        //const { events } =value;
+        console.log(events);
         //const eventsArr = events.filter((roEvent) => roEvent.rid == rId);
         const eventsArr=[];
         for(let i=0;i<events.length;i+=1){
-          //console.log(rId);
-          //eventsArr.push(events[i]);
-          //console.log(eventsArr);
-          if(events[i].rid==rId){
-            eventsArr.push(events[i]);
+          console.log(typeof events[i].rid);
+          console.log( typeof parseInt(rId));
+         // eventsArr.push(events[i]);
+          console.log(eventsArr);
+          console.log(parseInt(rId),"JAIIIIIIIIIIIIIIII");
+          if(events[i].rid==Number(rId)){
+             eventsArr.push(events[i]);
           }
         }
-        //console.log(eventsArr);
-        //const sortedActivities = eventsArr.sort((a, b) => new Date(b.edate) - new Date(a.edate));
-        var sortedActivities=eventsArr;
-        for(let i=0;i<sortedActivities.length;i+=1){
-          for(let j=i;j<sortedActivities.length;j+=1){
-             if(sortedActivities[i].edate<sortedActivities[j].edate){
-               let temp=sortedActivities[i];
-               sortedActivities[i]=sortedActivities[j];
-               sortedActivities[j]=temp;
-             }
-          }
-        }
-        for(let i=0;i<sortedActivities.length;i+=1){
-          for(let j=i;j<sortedActivities.length;j+=1){
-            if(sortedActivities[i].edate==sortedActivities[j].edate){
-              if(sortedActivities[i].etime<sortedActivities[j].etime){
-                let temp=sortedActivities[i];
-                sortedActivities[i]=sortedActivities[j];
-                sortedActivities[j]=temp;
-              }
-            }
-          }
-        }     
+        console.log(eventsArr,"Helllo this is events arr");
+        const sortedActivities = eventsArr.sort((a, b) => new Date(b.edate) - new Date(a.edate));  
         const sdate=new Date();
         sdate.setHours(0, 0, 0, 0);
         const sortedPastEvents=[];
@@ -61,7 +58,10 @@ function RegionalEvents(props) {
           }
           else{
               sortedCurrentEvents.push(sortedActivities[i]);
-          }             
+          }
+          console.log(sortedCurrentEvents,"Current Events");
+          console.log(sortedFutureEvents,"Future Events");
+          console.log(sortedPastEvents,"Past Events");             
         }
         return (
           <>
@@ -81,7 +81,7 @@ function RegionalEvents(props) {
             </div>
           </div>
             <div className="my-5 text-right">
-              <Link to={{  pathname: `/regionaloffice/${rId}/allfutureevents`,  state: sortedFutureEvents }}>
+              <Link to={{  pathname: "/allfutureevents",  state: sortedFutureEvents }}>
               <button
                       type="submit"
                       className="btn btn-dark align-items-right"
@@ -105,7 +105,7 @@ function RegionalEvents(props) {
                     ))}
                 </div>
                 <div className="my-5 text-right">
-                <Link to={{  pathname: `/regionaloffice/${rId}/allpastevents`,  state: sortedPastEvents }}>
+                <Link to={{  pathname: "/allpastevents",  state: sortedPastEvents }}>
                 <button
                       type="submit"
                       className="btn btn-dark align-items-right"
@@ -113,16 +113,7 @@ function RegionalEvents(props) {
                     >
                       See all past events
                     </button>
-                </Link>    
-                {/* <Link to={{  pathname: "/allpasteventssortedbylikes",  state: sortedPastEvents }}>
-                <button
-                      type="submit"
-                      className="btn btn-dark align-items-right"
-                      style={{ backgroundColor: "black" }}
-                    >
-                      Sorted past events
-                    </button>
-                </Link>           */}
+                </Link>              
                 </div>
           </div>
             
@@ -135,4 +126,3 @@ function RegionalEvents(props) {
 }
 
 export default RegionalEvents;
-
