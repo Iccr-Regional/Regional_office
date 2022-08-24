@@ -7,6 +7,7 @@ import BarChart from "./BarChart";
 import CurrentEvents from "./CurrentEvents";
 import Footer from "./footer";
 import background from "./background";
+import Map1 from "./Map1";
 function HomePage() {
   return (
     <div className="">
@@ -18,6 +19,7 @@ function HomePage() {
         <RegionalOfficeSection/>
         <BarChart/>
         <Footer/>
+        <Map1/>
     </div>
   );
 }

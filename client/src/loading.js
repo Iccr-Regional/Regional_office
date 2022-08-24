@@ -7,7 +7,7 @@ const loading=({history})=> {
    return (
       <div>
             <video loop autoPlay muted id="bg-video">
-                <source src={require("./video.mp4.mp4")} type="video/mp4"/>
+                <source src={require("./video2.mov")} type="video/mp4"/>
             </video>
       <div
          style={{

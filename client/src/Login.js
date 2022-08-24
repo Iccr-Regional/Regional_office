@@ -39,7 +39,7 @@ function Login() {
   return (
       <div>
             <video loop autoPlay muted id="bg-video">
-                <source src={require("./video.mp4.mp4")} type="video/mp4"/>
+                <source src={require("./pink.mp4")} type="video/mp4"/>
             </video>
         <br></br><br></br><br></br>
        <div className="container">

@@ -7,6 +7,7 @@ import { v4 as uuid } from "uuid";
 import AdminNavigation from "./AdminNavigation";
 import axios from "axios";
 import {Redirect} from "react-router-dom";
+import Footer from "./footer";
 
 
 class AddEvent extends Component {
@@ -122,7 +123,9 @@ onSubmit = event => {
     evid: this.state.evid,
     likes: this.state.likes,
   };
+
 };
+
   render() {
     return (
       <Consumer>
@@ -149,8 +152,9 @@ onSubmit = event => {
             <video loop autoPlay muted id="bg-video">
                 <source src={require("./video.mp4.mp4")} type="video/mp4"/>
             </video>
+            <AdminNavigation/>
             <div className="container-fluid">
-              <h1 className="text-center my-5 font-weight-light">
+              <h1 className="text-center my-5 py-5 font-weight-light">
                 Add Event
               </h1>
               <div className="row px-3 px-lg-5">
@@ -194,14 +198,7 @@ onSubmit = event => {
                     </div>
                     <div className="form-group px-5">
                       <label htmlFor="edesc">About *</label>
-                      <input
-                        type="text"
-                        name="edesc"
-                        id="edesc"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
+                      <textarea name="edesc" id="edesc" className="form-control" onChange={this.onChange} rows="10" cols="20" required/>
                     </div>
                     <div className="form-group px-5">
                       <label htmlFor="edate">Start Date *</label>
@@ -328,6 +325,7 @@ onSubmit = event => {
               </div>
             </div>
           </div>
+          <Footer/>
           </div>
           );
         }}

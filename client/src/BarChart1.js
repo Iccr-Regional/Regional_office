@@ -86,6 +86,7 @@ function BarChart() {
     },[]);
     return(
         <div className="BarChart container">
+
             <div className='row'>
                 <div className='col-* col-md-12'>
                 <h3 className='text-center'>No.of students participated in a year</h3>
@@ -94,6 +95,7 @@ function BarChart() {
             </div>
            
           </div>
+
         );
 }
 export default BarChart;
