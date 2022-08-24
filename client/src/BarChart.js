@@ -44,7 +44,9 @@ function BarChart() {
 
     useEffect(() => {
         const fetchData=async()=>{
+
             const url='http://localhost:3001/chart1'
+
             const dataSet1=[];
          fetch (url).then((data)=>{
             console.log("Api data",data)
@@ -54,13 +56,17 @@ function BarChart() {
                 console.log("ressss",res)
                 for (const val of res)
                 {
+
                     dataSet1.push(val.ne);
+
                 }
         setChartData({
-            labels: ["Delhi University","Ahemadabad","Bengaluru","Guwahati","Jammu","Kolkata","Lucknow","Mumbai","Patna","Pune","Shillong"],
+            labels: ["Delhi University","Ahmedabad","Bangalore","Guwahati","Jammu","Kolkata","Lucknow","Mumbai","Patna","Pune","Shillong"],
             datasets: [
                 {
+
                    label:["No.of events conducted"], 
+
                    data:dataSet1,
                    borderColor:['rgba(255, 99,132,1)'],
                    backgroundColor:['rgba(255, 99, 132, 0.5)',],
@@ -77,6 +83,7 @@ function BarChart() {
 
     return(
         <div className="BarChart container">
+
             <div className='row'>
                 <div className='col-* col-md-12'>
                 <h3 className='text-center'>Event</h3>
@@ -84,6 +91,7 @@ function BarChart() {
                 </div>
             </div>
             
+
           </div>
         );
 }

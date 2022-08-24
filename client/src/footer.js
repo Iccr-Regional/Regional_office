@@ -20,7 +20,7 @@ function Footer()
 {
     return(
     <footer>
-        <div className="container-fluid text-center" style={{backgroundColor:"lightblue"}}>
+        <div className="container-fluid text-center imagegiving">
             {/* <div className="py-5">
                 <h2 className="text-light">Interested in working with me?</h2>
                 <Link to="/contact">
@@ -45,7 +45,7 @@ function Footer()
                     </Link> */}
                 </div>
                 <div className="col-12 col-md-4 text-dark text-justify py-3">
-                <h2 className="text-primary text-center">Address</h2>
+                <h2 className="text-secondary text-center">Address</h2>
                     <p className="py-3 text-center">
                     ICCR New Delhi<br/>
                     Azad Bhawan Rd,IP Estate, <br/>
@@ -54,7 +54,7 @@ function Footer()
                     </p>
                 </div>
                 <div className="col-12 col-md-4 py-3">
-                    <h5 className="text-info pb-3">FOLLOW US</h5>
+                    <h5 className="text-danger pb-3">FOLLOW US</h5>
                     <a href="https://www.instagram.com/iccr_delhi/" target={'_blank'} rel="noopener noreferrer external">
                     <i className="fab fa-instagram text-light h1 d-block"></i>
                     </a>

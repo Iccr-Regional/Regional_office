@@ -70,7 +70,7 @@
     background-size:100%;
   }
   .sizing{
-    color: rgb(229, 196, 196);
+    color: rgb(194, 163, 168);
     font-weight: bold;
   }
   
@@ -78,7 +78,7 @@
     color: blue;
   }
   .colours-1{
-    color: pink;
+    color: rgb(234, 234, 16);
     top:50%;
     bottom: 50%;
     text-align: center;
@@ -160,4 +160,17 @@
   text-align: center;
   top:50px;
   
+}
+.sizing-2{
+  font-size:25px;
+}
+.sizing-1{
+  font-size: 30px;
+}
+.imagegiving{
+  /* background-image: url("https://cdn.99images.com/photos/wallpapers/creative-graphics/plain-color-computer%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-tment.jpg"); */
+  background-image:linear-gradient(to right,rgb(172, 55, 109),rgb(136, 176, 190),rgb(84, 148, 84));
+}
+.siz{
+  font-size: x-small;
 }

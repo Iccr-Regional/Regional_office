@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { Consumer } from "./context";
 import SuperAdminNavigation from "./SuperAdminNavigation";
 import axios from "axios";
+import Footer from './footer';
 import SimpleMDE from "react-simplemde-editor";
+
+
+
 
 class AddRegionalOffice extends Component {
 
@@ -94,7 +98,7 @@ class AddRegionalOffice extends Component {
           return (
             <div>
             <video loop autoPlay muted id="bg-video">
-                <source src={require("./video.mp4.mp4")} type="video/mp4"/>
+                <source src={require("./pink.mp4")} type="video/mp4"/>
             </video>
             <div className="container-fluid">
               <SuperAdminNavigation/>
@@ -110,9 +114,9 @@ class AddRegionalOffice extends Component {
                   <form onSubmit={this.onSubmit}>
                   <div className="form-group">
                       <br/><br/>
-                      <label htmlFor="eimg">Image Url *</label><br/>
+                      <label htmlFor="eimg" style={{color:'white'}}>Image Url *</label><br/>
                       <a href="https://postimages.org/" target="_blank" className=" text-right">Click here to upload images</a>
-                      <p className="text-left colors">Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
+                      <p className="text-left" style={{color:'white'}}>Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
                       <input
                         type="url"
                         name="eimg"
@@ -123,64 +127,62 @@ class AddRegionalOffice extends Component {
                       />
                   </div>  
                   <div className="form-group">
-                      <label htmlFor="rid">Id *</label>
+                      <label htmlFor="rid" style={{color:'white'}}>Id *</label>
                       <input
                         type="number"
                         name="rid"
                         id="rid"
                         value={this.state.rid}
-                        className="form-control colors"
+                        className="form-control"
                         onChange={this.handleonChange}
                         required
                       />
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="rname">Name *</label>
+                      <label htmlFor="rname" style={{color:'white'}}>Name *</label>
                       <input
                         type="text"
                         name="rname"
                         id="rname"
                         value={this.state.rname}
-                        className="form-control colors"
+                        className="form-control"
                         onChange={this.handleonChange}
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rdesc">About *</label>
 
-                      <input
-                        type="text"
-                        name="rdesc"
-                        id="rdesc"
-                        value={this.state.rdesc}
-                        className="form-control colors"
-                        onChange={this.handleonChange}
-                        required
-                      />
+                      <label htmlFor="rdesc" 
+                      style={{color:'white'}}>About *</label>
+                      <textarea name="rdesc"
+                       id="rdesc" 
+                       className="form-control" 
+                       onChange={this.onChange} 
+                       rows="10" cols="20" 
+                       required/>
 
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rimage">Image Url *</label>
+                      <label htmlFor="rimage" style={{color:'white'}}>Image Url *</label>
                       <input
                         type="url"
                         name="rimage"
                         id="rimage"
                         value={this.state.rimage}
-                        className="form-control colors"
+                        className="form-control"
                         onChange={this.handleonChange}
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rlocation">Location *</label>
+                      <label htmlFor="rlocation" style={{color:'white'}}>Location *</label>
                       <input
                         type="url"
                         name="rlocation"
                         id="rlocation"
                         value={this.state.rlocation}
-                        className="form-control colors"
+                        className="form-control"
                         onChange={this.handleonChange}
                         required
                       />
@@ -188,14 +190,14 @@ class AddRegionalOffice extends Component {
                     <div className="d-flex justify-content-around">
                     <button
                       type="submit"
-                      className="btn btn-dark "
+                      className="btn btn-dark"
                       style={{ backgroundColor: "black" }}
                     >
                       Publish
                     </button>
                     <button
                       type="reset"
-                      className="btn btn-dark "
+                      className="btn btn-dark"
                       style={{ backgroundColor: "black" }}
                     >
                       Cancel
@@ -216,6 +218,7 @@ class AddRegionalOffice extends Component {
                   </div>
               </div>
             </div>
+            <Footer/>
             </div>
           );
         }}

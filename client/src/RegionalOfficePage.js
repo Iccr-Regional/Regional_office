@@ -1,8 +1,10 @@
+
 import React from 'react'
 import BarChart1  from './BarChart1';
 import { useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import RegionalEvents from "./RegionalEvents";
+
 
 
 const RegionalOfficePage = (props) => {
@@ -21,12 +23,12 @@ const RegionalOfficePage = (props) => {
       <h1 className="font-weight-light  text-center my-5">Address: {regionalOffice.rlocation}</h1>
       <p className="font-weight-light text-center my-5">{regionalOffice.rdesc}</p>
       <div className="p-5">
-        <RegionalEvents rOName={regionalOffice.rname} />
+        <RegionalEvents rId={regionalOffice.rid} />
       </div>
     </div>
     <BarChart1/>
   </div>
-  )
+  );
 }
 
 export default RegionalOfficePage;
