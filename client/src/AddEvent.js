@@ -3,7 +3,6 @@ import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import ReactMarkdown from "react-markdown";
 import { Consumer } from "./context";
-import { v4 as uuid } from "uuid";
 import AdminNavigation from "./AdminNavigation";
 import axios from "axios";
 import {Redirect} from "react-router-dom";
@@ -26,8 +25,10 @@ class AddEvent extends Component {
       etime: "",
       eimg:"",
       rid: "",
-      enp: "",
+      ebp: "",
+      egp:"",
       ewin: "",
+      edrive:"",
       elocation:"",
       evid:"",
       likes:"",
@@ -44,16 +45,17 @@ class AddEvent extends Component {
     etime: "",
     eimg:"",
     rid: "",
-    enp: "",
+    ebp: "",
+    egp:"",
     ewin: "",
+    edrive:"",
     elocation:"",
     evid:"",
     likes: "",
     submitMessage: "",
     submitMessageTextColor: "",
   };
-
-  handleonChange = (event) => {
+  onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -68,15 +70,17 @@ class AddEvent extends Component {
   publishEventData=()=> {
    
     axios.post('http://localhost:3001/insertevent',{
-      eid:parseInt(this.state.eid,10),
+      eid:parseInt(this.state.eid),
       ename:this.state.ename,
-      rid:parseInt(this.state.rid,10),
+      rid:parseInt(this.state.rid),
       edesc:this.state.edesc,
       edate:this.state.edate,
       etime:this.state.etime,
-      enp:parseInt(this.state.enp),
+      ebp:parseInt(this.state.ebp),
+      egp:parseInt(this.state.egp),
       ewin:this.state.ewin,
       eimg:this.state.eimg,
+      edrive:this.state.edrive,
       elocation:this.state.elocation,
       evid:this.state.evid,
       likes:this.state.likes
@@ -118,6 +122,7 @@ onSubmit = event => {
     rid: this.state.rid,
     enp: this.state.enp,
     ewin: this.state.ewin,
+    edrive:this.state.edrive,
     elocation: this.state.elocation,
     evid: this.state.evid,
     likes: this.state.likes,
@@ -128,20 +133,10 @@ onSubmit = event => {
       <Consumer>
         {(value) => {
           const {
-            //eid,
-            ename,
-            edesc,
-            edate,
-            etime,
-            eimg,
-            rid,
-            enp,
-            ewin,
-            elocation,
-            evid,
+          
             submitMessage,
             submitMessageTextColor,
-          } = this.state;
+          } = this.state;  
           const { handler } = value;
 
           return (
@@ -157,7 +152,7 @@ onSubmit = event => {
                 <div className="col-sm-0 col-md-3"></div>
                 <div className="col-12 col-md-6 px-lg-5">
                   <div className="card shadow h-100 bg-light">
-                  <form onSubmit={this.onSubmit.bind(this, handler)}>
+                  <form onSubmit={this.onSubmit}>
                     <br/><br/>
                     <div className="form-group px-5">
                       <label htmlFor="rnp">Event Id *</label>
@@ -204,7 +199,7 @@ onSubmit = event => {
                       />
                     </div>
                     <div className="form-group px-5">
-                      <label htmlFor="edate">Start Date *</label>
+                      <label htmlFor="edate"> Date *</label>
                       <input
                         type="date"
                         name="edate"
@@ -227,7 +222,7 @@ onSubmit = event => {
                     </div>
                     
                     <div className="form-group px-5">
-                      <label htmlFor="rnp">No.of Boys participated </label>
+                      <label htmlFor="ebp">No.of Boys participated </label>
                       <input
                         type="number"
                         name="ebp"
@@ -237,7 +232,7 @@ onSubmit = event => {
                       />
                     </div>
                     <div className="form-group px-5">
-                      <label htmlFor="rnp">No.of Girls participated </label>
+                      <label htmlFor="egp">No.of Girls participated </label>
                       <input
                         type="number"
                         name="egp"
@@ -269,14 +264,14 @@ onSubmit = event => {
                       />
                     </div>
                     <div className="form-group px-5 markdown">
-                      <label htmlFor="rimage">Event Image Gallery(Insert your drive link here)</label>
+                      <label htmlFor="edrive">Event Image Gallery(Insert your drive link here)</label>
                       <input
                         type="url"
-                        name="rimage"
-                        id="rimage"
-                        value={this.state.rimage}
+                        name="edrive"
+                        id="edrive"
+                        value={this.state.edrive}
                         className="form-control"
-                        onChange={this.handleonChange}
+                        onChange={this.onChange}
                         
                       />
                     </div>

@@ -41,16 +41,18 @@ app.post('/insertevent',(req,res) => {
     const edesc=req.body.edesc;
     const edate=req.body.edate;
     const etime=req.body.etime;
-    const enp=req.body.enp;
+    const ebp=req.body.ebp;
+    const egp=req.body.egp;
     const ewin=req.body.ewin;
     const eimg=req.body.eimg;
+    const edrive=req.body.edrive;
     const elocation=req.body.elocation;
     const evid=req.body.evid;
     const likes=req.body.likes;
     console.log(req.body)
 
-    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,enp,ewin,eimg,elocation,evid,likes)VALUES (?,?,?,?,?,?,?,?,?,?,?,0)',
-    [eid,ename,rid,edesc,edate,etime,enp,ewin,eimg,elocation,evid],
+    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid,likes)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0)',
+    [eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid],
     (err,result) =>{
         if(err){
             console.log(err);
