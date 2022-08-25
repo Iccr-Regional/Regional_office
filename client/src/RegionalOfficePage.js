@@ -1,9 +1,11 @@
-
+import Map1 from './Map1';
+import Map from './Map';
 import React from 'react'
 import BarChart1  from './BarChart1';
 import { useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import RegionalEvents from "./RegionalEvents";
+import Footer from './footer';
 
 
 
@@ -27,6 +29,8 @@ const RegionalOfficePage = (props) => {
       </div>
     </div>
     <BarChart1/>
+    {/* <Map rLocation={regionalOffice.rlocation}/> */}
+    <Footer/>
   </div>
   );
 }
