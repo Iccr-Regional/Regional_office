@@ -14,33 +14,7 @@ function SuperAdminNavigation() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto coloring">
             <Nav.Link href="/superadmin">Home</Nav.Link>
-            <NavDropdown title="Regional Offices" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/regionaloffice/1">Ahmedabad</NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/2">
-                Bangalure
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/3">
-                Delhi University
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/4">
-                Guwahati
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/5">
-                Jammu
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/6">Kolkata</NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/7">
-                Lucknow
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/8">Mumbai</NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/9">
-                Patna
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/10">Pune</NavDropdown.Item>
-              <NavDropdown.Item href="/regionaloffice/11">
-                Shillong
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="/allregionaloffices">RegionalOffices</Nav.Link>            
             <Nav.Link href="/support">Support</Nav.Link>
             <Nav.Link href="/contact">Contact us</Nav.Link>
             <Nav.Link href="/addregionaloffice">Add Regional Office</Nav.Link>

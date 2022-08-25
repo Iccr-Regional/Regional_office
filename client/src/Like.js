@@ -4,20 +4,12 @@ class Like extends Component{
         super(props);
         this.state={
             clicks:0,
-            click:0,
+            click:Number(props.e.elikes),
             show:true,
             
         };
     }
-    IncrementItem=()=>{
-        this.setState({clicks:this.state.clicks+1});
-    }
-    DecreaseItem=()=>{
-        this.setState({clicks:this.state.clicks-1});
-    }
-    ToggleClick=()=>{
-        this.setState({show:!this.state.show});
-    }
+    
     
     lCount=()=>{
         this.setState({clicks:this.state.clicks+1});
@@ -27,8 +19,7 @@ class Like extends Component{
         }
         else
         {
-            this.state.click+=1;
-            
+            this.state.click +=1;           
         }
 
     }
@@ -36,18 +27,11 @@ class Like extends Component{
         return(
             <div>
                 
-                {/* <button onClick={this.IncrementItem} className="fas fa-heart text-danger"></button>
-                <button onClick={this.DecreaseItem} className="fas fa-heart text-primary"></button> */}
-                {/* <button className="fas fa-heart text-primary"
-                onClick={()=>{this.setState({BackgroundColor:"Pink"});this.lCount()}}></button>
-                <button className="fas fa-heart text-danger"
-                onClick={()=>{this.setState({BackgroundColor:"Blue"});this.lCount()}}></button> */}
+                <div className="d-flex align-items-center">
                 <button onClick={this.lCount} className="fas fa-heart text-danger"></button>
-                {/* <button onClick={this.ToggleClick}>
-                    {this.state.show?'Hide number':'show number'}
-                </button> */}
-                {this.state.show ? <h2>{this.state.click}</h2>:''}
-                {this.state.show ? <h2>{this.state.clicks}</h2>:''}
+                {this.state.show ? <h2>{this.state.click}</h2>:''}   </div>
+                
+                
             </div>
         );
     }

@@ -2,11 +2,26 @@ import React from "react";
 import CurrentEventCard from "./CurrentEventCard";
 import { Link } from "react-router-dom";
 import { Consumer } from "./context";
+import {useEffect,useState} from "react";
+import Axios from "axios";
 function AdminCurrentEvents(props) {
+  const [events,setEvents]=useState([]);
+  const Display = ()=>{
+    Axios.get('http://localhost:3001/getEvents').then((response)=>{
+      console.log(response.data);
+      setEvents(response.data);
+    }).catch(err=>{
+      console.log(err)
+    });
+  };
+
+ useEffect(()=>{
+  Display();
+ },[])
   return (
     <Consumer>
       {(value) => {
-        const { events } =value;
+       // const { events } =value;
         const sortedActivities = events.sort((a, b) => new Date(b.edate) - new Date(a.edate));  
         const sdate=new Date();
         sdate.setHours(0, 0, 0, 0);
