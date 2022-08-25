@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function FutureEventCard(props) {
   const { eid, ename, eimg, edate, etime } = props.futureEvent;
   return (
-    <div className="card shadow bg-light h-100">
+    <div className="card shadow bg-light ">
       <img className="card-img-top" src={eimg} alt={ename} height='400px' />
       <div className="card-body">
         <h4 className="card-title">{ename}</h4>

@@ -14,7 +14,7 @@ function Navigation(){
          <Navbar.Collapse id="responsive-navbar-nav">
            <Nav className="me-auto">
              <Nav.Link href="/" className="">Home</Nav.Link>
-             <NavDropdown title="Regional Offices" id="collasible-nav-dropdown" className="">
+             {/* <NavDropdown title="Regional Offices" id="collasible-nav-dropdown" className="">
                <NavDropdown.Item href="/regionaloffice/1">
                  Ahmedabad
                </NavDropdown.Item>
@@ -47,7 +47,8 @@ function Navigation(){
                <NavDropdown.Item href="/regionaloffice/11">
                  Shillong
                </NavDropdown.Item>
-             </NavDropdown>
+             </NavDropdown> */}
+             <Nav.Link href="/allregionaloffices" >Regional Offices</Nav.Link>
              <Nav.Link href="/support" className="">Support</Nav.Link>
              <Nav.Link href="/contact" className="">Contact us</Nav.Link>
              
