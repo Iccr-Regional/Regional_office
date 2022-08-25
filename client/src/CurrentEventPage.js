@@ -1,19 +1,14 @@
 import React from "react";
-import { Consumer } from "./context";
 import Footer from "./footer";
 import Like from "./Like";
 import Navigation from "./Navigation";
-import {useEffect,useState} from "react";
-import Axios from "axios";
 import { useLocation } from 'react-router-dom';
 function CurrentEventPage(props) {
   const eid = props.match.params.id;
   console.log(eid);
   const events = useLocation().state?.event;
   console.log(events)
- // const currentEvent = events.filter((currentEvent) => currentEvent.eid === eid)[0];
- // const { eimg, ename, rname, edesc, edate, etime } = currentEvent;
-
+ 
   return (
     
           <div>
