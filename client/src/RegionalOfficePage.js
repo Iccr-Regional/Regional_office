@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 import RegionalEvents from "./RegionalEvents";
 import Footer from './footer';
 import { NavDropdown } from 'react-bootstrap';
-
+import {Link} from "react-router-dom";
 
 
 const RegionalOfficePage = (props) => {
@@ -30,17 +30,29 @@ const RegionalOfficePage = (props) => {
     <div>
     <Navigation />
     <div className="container py-5 my-5 markdown">
-      <div className="justify-content-center m1">
-        <img src={regionalOffice.rimage} alt={regionalOffice.rname} className="w-100" />
-      </div>
-      <h1 className="font-weight-light text-center my-5">{regionalOffice.rname}</h1>
-      <h1 className="font-weight-light  text-center my-5">Address: {regionalOffice.rlocation}</h1>
-      <p className="font-weight-light text-center my-5">{regionalOffice.rdesc}</p>
-      <div className="p-5">
-        <RegionalEvents rId={regionalOffice.rid} />
-      </div>
-    </div>
-       <BarChart1 name={name}/>
+             
+            <h1 className="display-1 text-center my-3 ">{regionalOffice.rname}</h1>
+            <div className="d-flex justify-content-center m1">
+              <img src={regionalOffice.rimage} alt={regionalOffice.rname}  className="w-50" />
+            </div>
+            <h4 className="font-weight-light text-left my-5 "><b>About:</b>{regionalOffice.rdesc}</h4>
+            <ul>
+              <li><h4 className="font-weight-light  my-5"><b>Budget:</b> {regionalOffice.budget}</h4></li>
+              <li><h4 className="font-weight-light  my-5 "><b>Address:</b> {regionalOffice.rlocation}</h4></li>
+              <li><h4 className="font-weight-light  my-5"><b>Email:</b> {regionalOffice.remail}</h4></li>
+              <li><h4 className="font-weight-light  my-5"><b>Contact:</b> {regionalOffice.rcontact}</h4></li>
+            </ul>
+            <div className="p-5">
+                <RegionalEvents rId={regionalOffice.rid}/>
+            </div>
+          </div>
+    {/* <NavDropdown title="Bar Charts" id="collasible-nav-dropdown">
+              <NavDropdown.Item ><button onClick={onclick1}>Based on events</button> </NavDropdown.Item>
+              <NavDropdown.Item><button onClick={onclick2}>Based on regional office</button></NavDropdown.Item>
+              <NavDropdown.Item ><button onClick={onclick3}>Based on scholarship</button></NavDropdown.Item>
+            </NavDropdown>
+            <BarChart1 name={name}/> */}
+    
     <Footer/>
   </div>
   );

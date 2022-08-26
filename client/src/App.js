@@ -17,6 +17,7 @@ import Forget from "./Forget";
 import SuperAdminFutureEventPage from "./SuperAdminFutureEventPage";
 import SuperAdminPastEventPage from "./SuperAdminPastEventPage";
 import EditEvent from "./EditEvent";
+import EditStudent from "./EditStudent";
 import AddRegionalOffice from "./AddRegionalOffice";
 import Login from "./Login";
 import ScrollToTop from "./ScrollToTop";
@@ -95,6 +96,7 @@ function App() {
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
           <Route exact path="/admin/editevent" component={EditEvent}/>
+          <Route exact path="/admin/editstudent" component={EditStudent}/>
           <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} /> 
           <Route exact path="/superadmin/addevent" component={SuperAdminAddEvent}/>

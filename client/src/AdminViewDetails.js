@@ -1,14 +1,29 @@
 import React from 'react'
 import Footer from './footer';
 import Navigation from './Navigation';
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 export default function AdminViewDetails(props) {
   const details=props.location.state;
-  console.log(details);
+  const sid=props.match.params.sid;
+  console.log(sid);
+  const stu=useLocation().state?.details;
+  console.log(stu);
+ // console.log(details);
   return (
     <div>
         <Navigation/><br></br>
     <div className='card shadow h-100 py-5'>
+    {/* <Link to={{  pathname: "/admin/editstudent",  state: stu }}>
+                <button
+                      type="submit"
+                      className="btn btn-dark align-items-right"
+                      style={{ backgroundColor: "black" }}
+                    >
+                      Edit
+                    </button>
+                </Link> */}
     <div className='card-body'>
     <div align="center">
     <h1>Student Personal Info</h1>

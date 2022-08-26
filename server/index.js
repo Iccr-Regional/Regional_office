@@ -50,11 +50,12 @@ app.post('/insertevent',(req,res) => {
     const elocation=req.body.elocation;
     const evid=req.body.evid;
     const ebudget=req.body.ebudget;
-    const likes=req.body.likes;
+    const ebudgetlink=req.body.ebudgetlink;
+    
     console.log(req.body)
 
-    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
-    [eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid],
+    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid,ebudget,ebudgetlink)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+    [eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid,ebudget,ebudgetlink],
     (err,result) =>{
         if(err){
             console.log(err);
@@ -150,6 +151,50 @@ app.post('/insertstudent',(req,res) => {
         if(err){
             console.log(err);}
     });
+});
+
+app.put("/updatestudentinfo", (req,res) => {
+    const sid = req.body.sid;
+    const rid = req.body.rid;
+    const sname = req.body.sname;
+    const spno = req.body.spno;
+    const sdob = req.body.sdob;
+    const passport = req.body.passport;
+    const gender = req.body.gender;
+    const mailid = req.body.mailid;
+    const homecity = req.body.homecity;
+    const cname = req.body.cname;
+    const ccity = req.body.ccity;
+    const coname = req.body.coname;
+    const scmoney = req.body.scmoney;
+
+    const sqlupdate = "UPDATE student SET rid=?,sname=?,spno=?,sdob=?,passport=?,gender=?,mailid=?,homecity=?,cname=?,ccity=?,coname=?,scmoney=? WHERE sid=? ; ";
+
+    db.query(sqlupdate, [rid,sname,spno,sdob,passport,gender,mailid,homecity,cname,ccity,coname,scmoney,sid],(err,result) => {
+        if(err){
+            console.log(err);
+        }
+        
+    });
+});
+
+app.post('/register',(req,res) => {
+    const username=req.body.username;
+    const password=req.body.password;
+    
+    console.log(req.body)
+
+    db.query('INSERT INTO login (username,password)VALUES (?,?)',
+    [username,password],
+    (err,result) =>{
+        if(err){
+            console.log(err);
+        } else{
+            res.send();
+        }
+
+    }
+    );
 });
 
 app.put("/updateevent", (req,res) => {

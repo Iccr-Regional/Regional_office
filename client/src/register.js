@@ -1,180 +1,66 @@
-import React, { Component } from "react";
-import { Consumer } from "./context";
-import { v4 as uuid } from "uuid";
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
-class Register extends Component {
-  state = {
-    pid:"",
-    pname: "",
-    pemail:"",
-    ppwd:"",
-    pcpwd:"",
-    pphn: "",
-    submitMessage: "",
-    submitMessageTextColor: "",
-  };
+function Register() {
 
-  onChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
+  const[username,setusername] = useState("");
+  const[password,setpassword] = useState("");
+
+  const register = () =>{
+   
+    axios.post('http://localhost:3001/register',{
+      username:username,
+      password:password,
+    }).then(()=>{
+      console.log("success");
+     
     });
-  };
-
-  onSubmit = (handler, event) => {
-    event.preventDefault();
-
-    let isSuccessful = true;
-    if (isSuccessful) {
-      this.setState({
-        submitMessage: ` Registered Successfully`,
-        submitMessageTextColor: "text-info",
-      });
-    } else {
-      this.setState({
-        submitMessage: "Registration failed :(",
-        submitMessageTextColor: "text-danger",
-      });
-    }
-
-    const newPerson = {
-      pid: uuid(),
-      pname: this.state.pname,
-      pemail: this.state.pemail,
-      ppwd: this.state.ppwd,
-      pcpwd: this.state.pcpwd,
-      pphn:this.state.pphn,
-    };
-
-    handler("ADD_PERSON", newPerson);
-  };
-
-  render() {
-    return (
-      <Consumer>
-        {(value) => {
-          const {
-            pid,
-            pname,
-            pemail,
-            ppwd,
-            pcpwd,
-            pphn,
-            submitMessage,
-            submitMessageTextColor,
-          } = this.state;
-          const { handler } = value;
-
-          return (
-            <div>
-                <video loop autoPlay muted id="bg-video">
-//                 <source src={require("./pink.mp4")} type="video/mp4"/>
-//             </video>
-            <div className="container-fluid py-5">
-              <h1 className="text-center my-5 font-weight-light sizing">
-                Registration Form
-              </h1>
-              <div className="row px-3 px-lg-5">
-                <div className="col-sm-0 col-md-3"></div>
-                <div className="col-12 col-md-6 px-lg-5">
-                  <div className="card shadow h-100 bg-light py-4">
-                  <form onSubmit={this.onSubmit.bind(this, handler)}>
-                    <div className="form-group px-5 markdown">
-                      <label htmlFor="eimg">Id Number *</label>
-                      <input
-                        type="number"
-                        name="pid"
-                        id="pid"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="ename">Name *</label>
-                      <input
-                        type="text"
-                        name="pname"
-                        id="pname"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="rid">Phone Number * </label>
-                      <input
-                        type="number"
-                        name="pphn"
-                        id="pphn"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="edesc">Email *</label>
-                      <input
-                        type="email"
-                        name="pemail"
-                        id="pemail"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="edate">Password *</label>
-                      <input
-                        type="password"
-                        name="ppwd"
-                        id="ppwd"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="etime">Confirm Password *</label>
-                      <input
-                        type="password"
-                        name="pcwd"
-                        id="pcwd"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                   <div className="d-flex justify-content-around">
-                    <button
-                      type="submit"
-                      className="btn btn-dark "
-                      style={{ backgroundColor: "black" }}
-                    >
-                      Register
-                    </button>
-                    <button
-                      type="reset"
-                      className="btn btn-dark "
-                      style={{ backgroundColor: "black" }}
-                    >
-                      Cancel
-                    </button>
-                   </div>
+  }; 
+  return (
+      <div>
+            <video loop autoPlay muted id="bg-video">
+                <source src={require("./pink.mp4")} type="video/mp4"/>
+            </video>
+        <br></br><br></br><br></br>
+       <div className="container">
+        <div className="row pt-3"> 
+        <div className="col-sm-3 col-md-4"></div>
+          <div className="col-12 col-md-4" >
+            <div className="card shadow h-100">
+                    <h4 className="text-center">Registration Form</h4>
+                    <img src="https://cracku.in/latest-govt-jobs/wp-content/uploads/2020/04/ICCR-Logo.jpg" width="200" height="300" className="center"/>
+                
                     
-                  </form>
-                  <div className="text-center">
-                    <h5 className={submitMessageTextColor}>{submitMessage}</h5>
-                  </div>
-                </div>
-              </div>
+                    <div className="form-group px-5 colours"> 
+                      <input type="text" className="form-control" name="name" placeholder="User Name" 
+                      onChange={(event)=>{
+                             setusername(event.target.value);}}  required/>
+                    </div>  
+
+
+                    <div className="form-group px-5 colours">
+                       <input type="password" className="form-control" name="pwd" placeholder="Password" 
+                       onChange={(event)=>{
+                        setpassword(event.target.value);}}  required/>
+                    </div> 
+
+
+                    <div className="p-3 px-5">
+                        <div className="text-center">
+                          <button type="submit" className="btn btn-primary btn-block" onClick={register}>Sign UP</button>
+                        </div>
+                    </div>
+                   
             </div>
           </div>
+          
+      </div>
+     
           </div>
-          );
-        }}
-      </Consumer>
-    );
-  }
+    </div>
+    
+  );
 }
 
 export default Register;

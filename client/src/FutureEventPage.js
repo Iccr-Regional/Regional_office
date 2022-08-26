@@ -24,25 +24,17 @@ function FutureEventPage(props) {
           <div>
             <Navigation/>
           <div className="container py-5 my-5 markdown">
-            <Like/>
-            <Link to={{  pathname: "/editevent",  state: events }}>
-                <button
-                      type="submit"
-                      className="btn btn-dark align-items-right"
-                      style={{ backgroundColor: "black" }}
-                    >
-                      Edit
-                    </button>
-                </Link>
-            <div className="row justify-content-center">
+               <h1 className="display-1 text-center my-5">{events.ename}</h1>
               <div className="col-12 col-md-6 ">
                 <img src={events.eimg} alt={events.ename} className="w-100" />
               </div>
-            </div>
-            <h1 className="font-weight-light text-center my-5">{events.ename}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.rname}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.edesc}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.edate} {events.etime}</h1>
+            <h1 className="font-weight-light text-left my-5"><b>About:</b>{events.edesc}</h1>
+            <h1 className="font-weight-light my-5"><b>Budget:</b> {events.ebudget}</h1>
+            <h1 className="font-weight-light  my-5"><b>Date:</b>{events.edate}</h1>
+            <h1 className="font-weight-light  my-5"><b>Time:</b> {events.etime}</h1>
+            <div style={{ display: 'flex',justifyContent: 'center' }}>
+            <iframe width="50%" height="420" src={events.evid} title="United We Fight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           </div>
           <Footer/>
           </div>

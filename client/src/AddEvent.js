@@ -27,13 +27,14 @@ class AddEvent extends Component {
       etime: "",
       eimg:"",
       rid: "",
-      enp: "",
+      ebp: "",
       ewin: "",
       ebudget:"",
-      ebid:"",
+      edrive:"",
       elocation:"",
       evid:"",
-      likes:"",
+      egp:"",
+      ebudgetlink:"",
       submitMessage: "",
       submitMessageTextColor: "",
     };
@@ -42,18 +43,23 @@ class AddEvent extends Component {
   state = {
     eid:"",
     ename: "",
+    rid: "",
     edesc: "",
     edate: "",
     etime: "",
     eimg:"",
-    rid: "",
-    enp: "",
+    
+    ebp: "",
+    egp:"",
     ewin: "",
     ebudget:"",
     elocation:"",
     evid:"",
-    ebid:"",
-    likes: "",
+
+    edrive:"",
+    
+    ebudget:"",
+      ebudgetlink:"",
     submitMessage: "",
     submitMessageTextColor: "",
   };
@@ -79,14 +85,17 @@ class AddEvent extends Component {
       edesc:this.state.edesc,
       edate:this.state.edate,
       etime:this.state.etime,
-      enp:parseInt(this.state.enp),
+      ebp:parseInt(this.state.ebp),
+      egp:parseInt(this.state.egp),
       ewin:this.state.ewin,
-      ebudget:this.state.ebudget,
+   
       eimg:this.state.eimg,
+      edrive:this.state.edrive,
       elocation:this.state.elocation,
       evid:this.state.evid,
-      ebid:this.state.ebid,
-      likes:this.state.likes
+      ebudget:parseInt(this.state.ebudget),
+      ebudgetlink:this.state.ebudgetlink
+      
       
   }).then(()=>{
     console.log("success");
@@ -123,12 +132,13 @@ onSubmit = event => {
     etime: this.state.etime,
     eimg:this.state.eimg,
     rid: this.state.rid,
-    enp: this.state.enp,
+    ebp: this.state.ebp,
+    egp:this.state.egp,
     ewin: this.state.ewin,
     ebudget:this.state.ebudget,
     elocation: this.state.elocation,
     evid: this.state.evid,
-    ebid:this.state.ebid,
+    edrive:this.state.edrive,
     likes: this.state.likes,
   };
 
@@ -139,19 +149,7 @@ onSubmit = event => {
       <Consumer>
         {(value) => {
           const {
-            //eid,
-            ename,
-            edesc,
-            edate,
-            etime,
-            eimg,
-            rid,
-            enp,
-            ewin,
-            ebudget,
-            elocation,
-            evid,
-            ebid,
+           
             submitMessage,
             submitMessageTextColor,
           } = this.state;
@@ -173,7 +171,7 @@ onSubmit = event => {
                 <div className="col-sm-0 col-md-3"></div>
                 <div className="col-12 col-md-6 px-lg-5">
                   <div className="card shadow h-100 bg-light">
-                  <form onSubmit={this.onSubmit.bind(this, handler)}>
+                  <form onSubmit={this.onSubmit}>
                     <br/>
                     <div className="form-group px-5">
                       <label htmlFor="rnp">Event Id *</label>
@@ -181,6 +179,7 @@ onSubmit = event => {
                         type="number"
                         name="eid"
                         id="eid"
+                        
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -192,6 +191,7 @@ onSubmit = event => {
                         type="text"
                         name="ename"
                         id="ename"
+                        
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -203,6 +203,8 @@ onSubmit = event => {
                         type="number"
                         name="rid"
                         id="rid"
+
+                        
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -213,11 +215,12 @@ onSubmit = event => {
                       <textarea name="edesc" id="edesc" className="form-control" onChange={this.onChange} rows="10" cols="20" required/>
                     </div>
                     <div className="form-group px-5">
-                      <label htmlFor="edate">Start Date *</label>
+                      <label htmlFor="edate"> Date *</label>
                       <input
                         type="date"
                         name="edate"
                         id="edate"
+                        
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -229,6 +232,7 @@ onSubmit = event => {
                         type="time"
                         name="etime"
                         id="etime"
+                        
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -241,6 +245,7 @@ onSubmit = event => {
                         type="number"
                         name="ebp"
                         id="ebp"
+                        
                         className="form-control"
                         onChange={this.onChange}
                       />
@@ -251,6 +256,7 @@ onSubmit = event => {
                         type="number"
                         name="egp"
                         id="egp"
+                      
                         className="form-control"
                         onChange={this.onChange}
                       />
@@ -261,32 +267,14 @@ onSubmit = event => {
                         type="text"
                         name="ewin"
                         id="ewin"
+                      
                         className="form-control"
                         onChange={this.onChange}
                       />
                       </div>
-                      <div className="form-group px-5">
-                      <label htmlFor="ebudget">Budget </label>
-                      <input
-                        type="text"
-                        name="ebudget"
-                        id="ebudget"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div> 
                     
-                    <div className="form-group px-5">
-                      <label htmlFor="evid">Budget proofs drive Link </label>
-                      <input
-                        type="url"
-                        name="ebid"
-                        id="ebid"
-                        className="form-control"
-                        onChange={this.onChange}
-                      />
-                    </div>
+                    
+                    
 
                     <div className="form-group px-5 markdown">
                       <label htmlFor="eimg">Image Url *</label><br/>
@@ -296,6 +284,7 @@ onSubmit = event => {
                         type="url"
                         name="eimg"
                         id="eimg"
+                    
                         className="form-control"
                         onChange={this.onChange}
                         required
@@ -305,11 +294,11 @@ onSubmit = event => {
                       <label htmlFor="rimage">Event Image Gallery(Insert your drive link here)</label>
                       <input
                         type="url"
-                        name="rimage"
-                        id="rimage"
-                        value={this.state.rimage}
+                        name="edrive"
+                        id="edrive"
+                    
                         className="form-control"
-                        onChange={this.handleonChange}
+                        onChange={this.onChange}
                         
                       />
                     </div>
@@ -319,10 +308,35 @@ onSubmit = event => {
                         type="url"
                         name="evid"
                         id="evid"
+                      
                         className="form-control"
                         onChange={this.onChange}
                       />
                     </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="ebudget">Budget </label>
+                      <input
+                        type="number"
+                        name="ebudget"
+                        id="ebudget"
+                      
+                        className="form-control"
+                        onChange={this.onChange}
+                        
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="ebudgetlink">Budget proofs drive Link </label>
+                      <input
+                        type="url"
+                        name="ebudgetlink"
+                        id="ebudgetlink"
+                        className="form-control"
+                        
+                        onChange={this.onChange}
+                      />
+                    </div>
+                    
                     <div className="form-group px-5">
                       <label htmlFor="elocation">Location </label>
                       <input

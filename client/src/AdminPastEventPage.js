@@ -24,22 +24,23 @@ function AdminPastEventPage(props) {
                       Edit
                     </button>
                 </Link>
+              </div>
+                <h1 className="display-1 text-center my-5">{events.ename}</h1><br/>
+            <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
                 <img src={events.eimg} alt={events.ename} className="w-100" />
               </div>
             </div>
-            <h1 className="font-weight text-center sizing-1">Event Name</h1>
-            <h1 className="font-weight-light text-center  sizing-1">{events.ename}</h1>
-            <br/>
-            <h1 className="font-weight text-center sizing-1">Organised By</h1>
-            <h1 className="font-weight-light text-center   sizing-1">{events.rname}</h1>
-            <br/>
-            <h1 className="text-center sizing-1">About</h1>
-            <h1 className="font-weight-light text-left   sizing-2">{events.edesc}</h1>
-            <h1 className="font-weight-light text-center   sizing-2">Date of the Event</h1>
-            <h1 className="font-weight-light text-center   sizing-1">{events.edate}</h1>
-            <h1 className="font-weight-light text-center   sizing-2">Time of the Event</h1>
-            <h1 className="font-weight-light text-center   sizing-1">{events.etime}</h1>
+             <h1 className="font-weight-light text-left my-5"><b>About:</b>{events.edesc}</h1>
+            <h1 className="font-weight-light  my-5"><b>No.of Boys Participated: </b>{events.ebp}</h1>
+            <h1 className="font-weight-light  my-5"><b>No.of Girls Participated: </b>{events.egp}</h1>
+            <h1 className="font-weight-light  my-5"><b>Winner:</b> {events.ewin}</h1>
+            <h1 className="font-weight-light  my-5"><b>Budget:</b> {events.ebudget}</h1>
+            <h1 className="font-weight-light  my-5"><b>Date: </b>{events.edate}</h1>
+            <h1 className="font-weight-light  my-5"><b>Time:</b> {events.etime}</h1>
+            <div style={{ display: 'flex',justifyContent: 'center' }}>
+            <iframe width="50%" height="420" src={events.evid} title="United We Fight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
             <div className="card shadow bg-light h-100">
                <div className="card-body">
                  <p className="text-center">

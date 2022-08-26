@@ -21,7 +21,6 @@ function AdminCurrentEventPage(props) {
 
           <AdminNavigation/>
           <div className="container py-5 my-5 markdown">
-            <Like/>
             <div className="row justify-content-center">
             <Link to={{  pathname: "/admin/editevent",  state: events }}>
                 <button
@@ -32,16 +31,20 @@ function AdminCurrentEventPage(props) {
                       Edit
                     </button>
                 </Link>
+                </div>
+                <h1 className="dispaly-1 text-center my-5">{events.ename}</h1>
+              <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
                 <img src={events.eimg} alt={events.ename} className="w-100" />
               </div>
             </div>
-
-            <h1 className="font-weight-light text-center my-5">{events.ename}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.rname}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.edesc}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.edate}</h1>
-            <h1 className="font-weight-light text-center my-5">{events.etime}</h1>
+            <h1 className="font-weight-light text-left my-5">{events.edesc}</h1>
+            <h1 className="font-weight-light  my-5"><b>Budget:</b> {events.ebudget}</h1>
+            <h1 className="font-weight-light my-5"><b>Organised On:</b>{events.edate}</h1>
+            <h1 className="font-weight-light  my-5"><b>Start time:</b> {events.etime}</h1>
+            <div style={{ display: 'flex',justifyContent: 'center' }}>
+            <iframe width="50%" height="420" src={events.evid} title="United We Fight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
 
           </div>
           <Footer/>

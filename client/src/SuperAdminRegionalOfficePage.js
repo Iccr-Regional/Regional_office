@@ -3,6 +3,7 @@ import {useLocation} from "react-router-dom";
 import BarChart from "./BarChart";
 import SuperAdminNavigation from "./SuperAdminNavigation";
 import SuperAdminRegionalEvents from "./SuperAdminRegionalEvents";
+import Footer from "./footer";
 import BarChart1 from "./BarChart1";
 function SuperAdminRegionalOfficePage(props) {
   // return (
@@ -18,17 +19,22 @@ function SuperAdminRegionalOfficePage(props) {
           <div>
             <SuperAdminNavigation/>
           <div className="container py-5 my-5 markdown">
-            <div className="justify-content-center m1">
-              <img src={regionalOffice.rimage} alt={regionalOffice.rname} className="w-100" />
+      <h1 className="display-1 text-center my-5 sizing-1">{regionalOffice.rname}</h1>
+            <div className="d-flex justify-content-center m1">
+              <img src={regionalOffice.rimage} alt={regionalOffice.rname}  className="w-50" />
             </div>
-            <h1 className="font-weight-light text-center my-5">{regionalOffice.rname}</h1>
-            <h1 className="font-weight-light  text-center my-5">Address: {regionalOffice.rlocation}</h1>
-            <p className="font-weight-light text-center my-5">{regionalOffice.rdesc}</p>
+            <h4 className="font-weight-light text-left my-2 ">{regionalOffice.rdesc}</h4>
+            <ul>
+              <li><h4 className="font-weight-light  my-2"><b>Budget:</b> {regionalOffice.budget}</h4></li>
+              <li><h4 className="font-weight-light   my-2 "><b>Address:</b> {regionalOffice.rlocation}</h4></li>
+              <li><h4 className="font-weight-light  my-2"><b>Email:</b> {regionalOffice.remail}</h4></li>
+              <li><h4 className="font-weight-light  my-2"><b>Contact:</b> {regionalOffice.rcontact}</h4></li>
+            </ul>
             <div className="p-5">
                 <SuperAdminRegionalEvents rId={regionalOffice.rid}/>
             </div>
           </div>
-          <BarChart1/>
+    <Footer/>
           </div>
         );
       }
