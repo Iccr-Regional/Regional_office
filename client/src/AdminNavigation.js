@@ -8,7 +8,7 @@ function AdminNavigation() {
     <Navbar collapseOnSelect expand="lg"  className="sh p-3 gradiating fixed-top">
       <Container>
         <Navbar.Brand href="/admin" className="">
-          <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="80px"></img>
+          <img src="https://aniportalimages.s3.amazonaws.com/media/details/ICCR3110_AQ5L0rs.jpg" width="60px"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -16,12 +16,16 @@ function AdminNavigation() {
             <Nav.Link href="/admin">Home</Nav.Link>
             
             <Nav.Link href="/allregionaloffices">RegionalOffices</Nav.Link>
-            
+            <NavDropdown title="Add" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/addevent">Add Event</NavDropdown.Item>
+              <NavDropdown.Item href="/student">Add Student</NavDropdown.Item>
+            </NavDropdown >
+            <Nav.Link href="/admin/statistics">Statistics</Nav.Link>
+            <Nav.Link href="/admin/studentpage" className="">Student Details</Nav.Link>
             <Nav.Link href="/support">Support</Nav.Link>
             <Nav.Link href="/contact">Contact us</Nav.Link>
-            <Nav.Link href="/addevent">Add Event</Nav.Link>
-            <Nav.Link href="/editevent">Edit Event</Nav.Link>
-            <Nav.Link href="/login" className="fixing">Logout</Nav.Link>
+            
+            <Nav.Link href="/" className="fixing">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

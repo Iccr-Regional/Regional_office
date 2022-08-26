@@ -82,6 +82,16 @@ app.get('/getregionaloffice',(req,res)=>{
     });
 });
 
+app.get('/getData',(req,res)=>{
+    db.query("SELECT * from student",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 app.post('/validate',(req,res)=>{
     const username = req.body.username; 
     const password = req.body.password;
@@ -215,7 +225,7 @@ app.get('/chart2',(req,res)=>{
 });
 
 app.get('/chart3',(req,res)=>{
-    db.query("select rname AS year,rnp AS boys,rgp AS girls from rooffice ",(err,result)=>{
+    db.query("select rname AS name,rbp AS boys,rgp AS girls from rooffice ",(err,result)=>{
         if(err){
             console.log(err);
         } else {
@@ -243,6 +253,17 @@ app.get('/chart5',(req,res)=>{
         }
     });
 });
+
+app.get('/chart6',(req,res)=>{
+    db.query("SELECT (SUM(rbp)/(SUM(rbp)+SUM(rgp))) as boys ,(SUM(rgp)/(SUM(rbp)+SUM(rgp))) AS girls from rooffice;",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 app.listen(3001,()=>{
     console.log("server is running on port 3001");
 });

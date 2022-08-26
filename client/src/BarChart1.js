@@ -36,7 +36,7 @@ ChartJs.register(
     },
 };
 
-function BarChart() {
+function BarChart1() {
 
     const [chartData, setChartData] = useState({
         datasets: [],
@@ -90,7 +90,7 @@ function BarChart() {
 
             <div className='row'>
                 <div className='col-* col-md-12'>
-                <h3 className='text-center'>No.of students participated in a year</h3>
+                <h3 className='text-center'>No of Boys and Girls participated in a Event (yearwise)</h3>
           <     Bar options={ChartOptions} data={chartData}/>
                 </div>
             </div>
@@ -99,4 +99,4 @@ function BarChart() {
 
         );
 }
-export default BarChart;
+export default BarChart1;

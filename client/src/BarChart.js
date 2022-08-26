@@ -86,7 +86,7 @@ function BarChart() {
 
             <div className='row'>
                 <div className='col-* col-md-12'>
-                <h3 className='text-center'>Event</h3>
+                <h3 className='text-center'>No of Events conducted by regional Offices</h3>
                 <Bar options={ChartOptions} data={chartData}/>
                 </div>
             </div>

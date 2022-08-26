@@ -25,6 +25,15 @@ import SuperAdminAddEvent from "./SuperAdminAddEvent";
 import SuperAdminHomePage from "./SuperAdminHomePage";
 import Support from "./Support";
 import Contact from "./Contact";
+import DynamicTable from "./DynamicTable";
+import SuperAdminDynamicTable from "./SuperAdminDynamicTable";
+import SuperAdminStudentPage from "./SuperAdminStudentPage";
+import StudentPage from "./StudentPage";
+import AdminStudentPage from "./AdminStudentPage";
+import ViewDetails from "./ViewDetails";
+import AdminDynamicTable from "./AdminDynamicTable";
+import AdminViewDetails from "./AdminViewDetails";
+import SuperAdminViewDetails from "./SuperAdminViewDetails";
 import AdminAllFutureEvents from "./AdminAllFutureEvents"
 import SuperAdminEditEvent from "./SuperAdminEditEvent";
 import AdminCurrentEventPage from "./AdminCurrentEventPage";
@@ -40,6 +49,10 @@ import Register from "./register";
 import loading from "./loading";
 import background from "./background";
 import Footer from "./footer";
+import Student from "./Student"
+import SuperAdminStatistics from "./SuperAdminStatistics";
+import AdminStatistics from "./AdminStatistics";
+import Statistics from "./Statistics";
 import SuperAdminAllFutureEvents from "./SuperAdminAllFutureEvents";
 import AdminPastEventPage from "./AdminPastEventPage";
 import EditRegionaloffice from "./EditRegionaloffice";
@@ -83,16 +96,26 @@ function App() {
           <Route exact path="/addevent" component={AddEvent}  />
           <Route exact path="/admin/editevent" component={EditEvent}/>
           <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
-          <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
-          <Route exact path="/addevents" component={SuperAdminAddEvent}/>
-          <Route exact path="/superadminadd" component={SuperAdminAddEvent}/>
+          <Route exact path="/addregionaloffice" component={AddRegionalOffice} /> 
+          <Route exact path="/superadmin/addevent" component={SuperAdminAddEvent}/>
           <Route exact path="/support" component={Support}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/forget" component={Forget}/>
-
+          <Route exact path="/statistics" component={Statistics}/>
+          <Route exact path="/admin/statistics" component={AdminStatistics}/>
+          <Route exact path="/superadmin/statistics" component={SuperAdminStatistics}/>
           <Route exact path="/allpasteventssortedbylikes" component={SortedByLikes}/>
-
+          <Route exact path="/student" component={Student}/>
+          <Route exact path="/studentdetails" component={DynamicTable}/>
+          <Route exact path="/admin/studentdetails" component={AdminDynamicTable}/>
+          <Route exact path="/studentpage" component={StudentPage}/>
+          <Route exact path="/admin/studentpage" component={AdminStudentPage}/>
+          <Route exact path="/admin/details" component={AdminViewDetails}/>
+          <Route exact path="/superadmin/studentdetails" component={SuperAdminDynamicTable}/>
+          <Route exact path="/superadmin/studentpage" component={SuperAdminStudentPage}/>
+          <Route exact path="/superadmin/details" component={SuperAdminViewDetails}/>
+          <Route exact path="/details" component={ViewDetails}/>
           <Route component={NotFound} />  
         </Switch>  
 

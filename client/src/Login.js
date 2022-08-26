@@ -71,7 +71,7 @@ function Login() {
                         </div>
                     </div>
                     <div className="form-group px-5"> <Link to="/forget" className="colours">Forget password?</Link> </div> 
-                    <div className="form-group px-5"> <Link to="/register" className="colours">Register</Link> </div> 
+                    
             </div>
           </div>
           

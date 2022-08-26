@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "easymde/dist/easymde.min.css";
 import { Consumer } from "./context";
 import AdminNavigation from "./AdminNavigation";
-import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
+//import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
 import axios from "axios";
 import Footer from "./footer";
 
@@ -48,7 +48,8 @@ class Student extends Component {
     submitMessageTextColor: "",
   };
 
-  onChange = (event) => {
+  onChange = event => {
+    //const{name,value}=event.target;
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -188,7 +189,7 @@ onSubmit = event => {
                         required
                       />
                     </div>
-                    {/* <div className="form-group px-5">
+                     <div className="form-group px-5">
                       <label htmlFor="gender">Gender *</label>
                       <input
                         type="text"
@@ -198,28 +199,30 @@ onSubmit = event => {
                         onChange={this.onChange}
                         required
                       />
-                    </div> */}
-                    <div className="form-group px-5">
+                    </div> 
+                    {/* <div className="form-group px-5">
                       <label htmlFor="gender">Gender *</label>
                       <br/>
                       <input
                         type="radio"
                         name="male"
                         id="gender"
+                        value="male"
                         className=""
                         onChange={this.onChange}
-                        required
+                        
                       />Male
                       <input
                         type="radio"
                         name="female"
                         id="gender"
+                        value="female"
                         className=""
                         onChange={this.onChange}
-                        required
+                        
                       />Female
                       
-                    </div>
+                    </div> */}
                     <div className="form-group px-5">
                       <label htmlFor="mailid">Email *</label>
                       <input

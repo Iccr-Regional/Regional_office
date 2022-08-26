@@ -18,8 +18,8 @@ function HomePage() {
         <CurrentEvents/>
         <RegionalOfficeSection/>
         <BarChart/>
-        <Footer/>
         <Map1/>
+        <Footer/>
     </div>
   );
 }

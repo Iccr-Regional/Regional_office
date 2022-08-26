@@ -14,41 +14,9 @@ function Navigation(){
          <Navbar.Collapse id="responsive-navbar-nav">
            <Nav className="me-auto">
              <Nav.Link href="/" className="">Home</Nav.Link>
-             {/* <NavDropdown title="Regional Offices" id="collasible-nav-dropdown" className="">
-               <NavDropdown.Item href="/regionaloffice/1">
-                 Ahmedabad
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/2">
-                 Bangalure
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/3">
-                 Delhi University
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/4">
-                 Guwahati
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/5">
-                 Jammu
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/6">
-                 Kolkata
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/7">
-                 Lucknow
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/8">
-                 Mumbai
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/9">
-                 Patna
-               </NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/10">
-                 Pune</NavDropdown.Item>
-               <NavDropdown.Item href="/regionaloffice/11">
-                 Shillong
-               </NavDropdown.Item>
-             </NavDropdown> */}
              <Nav.Link href="/allregionaloffices" >Regional Offices</Nav.Link>
+             <Nav.Link href="/statistics">Statistics</Nav.Link>
+             <Nav.Link href="/studentpage" className="">Student Details</Nav.Link>
              <Nav.Link href="/support" className="">Support</Nav.Link>
              <Nav.Link href="/contact" className="">Contact us</Nav.Link>
              
