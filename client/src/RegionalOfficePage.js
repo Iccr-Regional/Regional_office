@@ -46,13 +46,8 @@ const RegionalOfficePage = (props) => {
                 <RegionalEvents rId={regionalOffice.rid}/>
             </div>
           </div>
-    {/* <NavDropdown title="Bar Charts" id="collasible-nav-dropdown">
-              <NavDropdown.Item ><button onClick={onclick1}>Based on events</button> </NavDropdown.Item>
-              <NavDropdown.Item><button onClick={onclick2}>Based on regional office</button></NavDropdown.Item>
-              <NavDropdown.Item ><button onClick={onclick3}>Based on scholarship</button></NavDropdown.Item>
-            </NavDropdown>
-            <BarChart1 name={name}/> */}
     
+    <BarChart1/>
     <Footer/>
   </div>
   );

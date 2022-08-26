@@ -2,8 +2,8 @@ import React from "react";
 import MapSection from "./Map";
 const location = {
     
-    lat: 37.42216,
-    lng: -122.08427,
+    lat: 28.635324,
+    lng: 77.224944,
   } // our location object from earlier
   
   const Map1 = () => (

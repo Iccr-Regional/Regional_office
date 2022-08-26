@@ -59,7 +59,11 @@ import SuperAdminAllFutureEvents from "./SuperAdminAllFutureEvents";
 import AdminPastEventPage from "./AdminPastEventPage";
 import EditRegionaloffice from "./EditRegionaloffice";
 import SortedByLikes from "./SortedByLikes";
+import AdminSupport from "./AdminSupport";
+import SuperAdminSupport from "./SuperAdminSupport";
 import AdminAllPastEvents from "./AdminAllPastEvents";
+import AdminContact from "./AdminContact";
+import SuperAdminContact from "./SuperAdminContact";
 function App() {
   return (
     <Provider>
@@ -82,6 +86,7 @@ function App() {
           <Route exact path="/superadmin/allregionaloffices" component={SuperAdminAllRegionalOffices}/>
           <Route exact path="/regionaloffice/:id/allfutureevents" component={AllFutureEvents} />
           <Route exact path="/pastevent/:id" component={PastEventPage} />
+          <Route exact path="/superadmin/support" component={SuperAdminSupport}/>
           <Route exact path="/superadmin/pastevent/:id" component={SuperAdminPastEventPage} />
           <Route exact path="/admin/pastevent/:id" component={AdminPastEventPage} />
           <Route exact path="/currentevent/:id" component={CurrentEventPage}/>
@@ -97,6 +102,7 @@ function App() {
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
           <Route exact path="/admin/editevent" component={EditEvent}/>
+          <Route exact path="/admin/support" component={AdminSupport}/>
           <Route exact path="/admin/editstudent" component={EditStudent}/>
           <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} /> 
@@ -120,6 +126,8 @@ function App() {
           <Route exact path="/superadmin/studentpage" component={SuperAdminStudentPage}/>
           <Route exact path="/superadmin/details" component={SuperAdminViewDetails}/>
           <Route exact path="/details" component={ViewDetails}/>
+          <Route exact path="/admin/contact" component={AdminContact}/>
+          <Route exact path="/superadmin/contact" component={SuperAdminContact}/>
           <Route component={NotFound} />  
         </Switch>  
 

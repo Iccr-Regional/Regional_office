@@ -24,8 +24,8 @@ function SuperAdminNavigation() {
               <NavDropdown.Item href="/register">Add Admin</NavDropdown.Item>
             </NavDropdown >
             <Nav.Link href="/superadmin/statistics">Statistics</Nav.Link>
-            <Nav.Link href="/support">Support</Nav.Link>
-            <Nav.Link href="/contact">Contact us</Nav.Link>
+            <Nav.Link href="/superadmin/support">Support</Nav.Link>
+            <Nav.Link href="/superadmin/contact">Contact us</Nav.Link>
             <Nav.Link href="/" className="rfix-1">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
