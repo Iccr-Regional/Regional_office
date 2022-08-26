@@ -1,5 +1,5 @@
 import React from "react";
-import CurrentEventCard from "./CurrentEventCard";
+import AdminCurrentEventCard from "./AdminCurrentEventCard";
 import { Link } from "react-router-dom";
 import { Consumer } from "./context";
 import {useEffect,useState} from "react";
@@ -40,7 +40,7 @@ function AdminCurrentEvents(props) {
             <div className="row d-flex justify-content-around my-5 pt-3">
                {sortedCurrentEvents.slice(0,2).map((currentEvent) => (
                   <div key={currentEvent.eid} className="col-12 col-md-5 my-2">
-                  <CurrentEventCard currentEvent={currentEvent} />
+                  <AdminCurrentEventCard currentEvent={currentEvent} />
             </div>
             ))}
         </div>

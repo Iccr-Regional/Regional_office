@@ -21,9 +21,8 @@ function SuperAdminCurrentEventPage(props) {
 
           <SuperAdminNavigation/>
           <div className="container py-5 my-5 markdown">
-            <Like/>
             <div className="row justify-content-center">
-            <Link to={{  pathname: "/admin/editevent",  state: events }}>
+            <Link to={{  pathname: "/superadmin/editevent",  state: events }}>
                 <button
                       type="submit"
                       className="btn btn-dark align-items-right"

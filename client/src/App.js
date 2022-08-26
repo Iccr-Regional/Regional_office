@@ -9,6 +9,7 @@ import NotFound from "./NotFound";
 import FutureEventPage from "./FutureEventPage";
 import { Provider } from "./context";
 import AllPastEvents from "./AllPastEvents";
+import SuperAdminStudent from "./SuperAdminStudent";
 import AllFutureEvents from "./AllFutureEvents";
 import AllRegionalOffices from "./AllRegionalOffices";
 import RegionalOfficePage from "./RegionalOfficePage";
@@ -113,6 +114,7 @@ function App() {
           <Route exact path="/admin/studentdetails" component={AdminDynamicTable}/>
           <Route exact path="/studentpage" component={StudentPage}/>
           <Route exact path="/admin/studentpage" component={AdminStudentPage}/>
+          <Route exact path="/superadmin/student" component={SuperAdminStudent}/>
           <Route exact path="/admin/details" component={AdminViewDetails}/>
           <Route exact path="/superadmin/studentdetails" component={SuperAdminDynamicTable}/>
           <Route exact path="/superadmin/studentpage" component={SuperAdminStudentPage}/>

@@ -35,6 +35,7 @@ app.post('/create',(req,res) => {
     }
     );
 });
+
 app.post('/insertevent',(req,res) => {
     const eid=req.body.eid;
     const ename=req.body.ename;
@@ -202,8 +203,8 @@ app.put("/updateevent", (req,res) => {
     const ename = req.body.ename;
     const rid = req.body.rid;
     const edesc = req.body.edesc;
-    const estartdate = req.body.estartdate;
-    const eenddate = req.body.eenddate;
+    const edate = req.body.edate;
+    
     const etime = req.body.etime;
     const ebp = req.body.ebp;
     const egp = req.body.egp;
@@ -211,10 +212,11 @@ app.put("/updateevent", (req,res) => {
     const eimg = req.body.eimg;
     const elocation = req.body.elocation;
     const evid = req.body.evid;
+    const ebudget = req.body.ebudget;
+    const ebudgetlink = req.body.ebudgetlink;
+    const sqlupdate = "UPDATE event SET ename=?,rid=?,edesc=?,edate=?,etime=?,ebp=?,egp=?,ewin=?,eimg=?,elocation=?,evid=?,ebudget=?,ebudgetlink=? WHERE eid=? ; ";
 
-    const sqlupdate = "UPDATE event SET ename=?,rid=?,edesc=?,estartdate=?,eenddate=?,etime=?,ebp=?,egp=?,ewin=?,eimg=?,elocation=?,evid=? WHERE eid=? ; ";
-
-    db.query(sqlupdate, [ename,rid,edesc,estartdate,eenddate,etime,ebp,egp,ewin,eimg,elocation,evid,eid],(err,result) => {
+    db.query(sqlupdate, [ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,elocation,evid,ebudget,ebudgetlink,eid],(err,result) => {
         if(err){
             console.log(err);
         }

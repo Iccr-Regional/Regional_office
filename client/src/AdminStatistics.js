@@ -6,6 +6,7 @@ import BarChart4 from "./BarChart4";
 import BarChart3 from "./BarChart3";
 import BarChart2 from "./BarChart2";
 import BarChart1 from "./BarChart1";
+import PieChart from "./PieChart";
 
 function AdminStatistics() {
   return (
@@ -36,6 +37,9 @@ function AdminStatistics() {
         <br/>
         <br/>
         <br/>
+        <PieChart/>
+        <br/>
+        
         <Footer/>
     </div>
   );

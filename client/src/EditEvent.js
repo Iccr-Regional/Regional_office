@@ -22,6 +22,8 @@ function EditEvent(props) {
     const [eimg, seteimg] = useState(Event.eimg);
     const[elocation,setelocation] = useState(Event.elocation);
     const [evid, setevid] = useState(Event.evid);
+    const[ebudget,setebudget] = useState(Event.ebudget);
+    const[ebudgetlink,setebudgetlink] = useState(Event.ebudgetlink);
   
     // function for handling the edit and 
     // pushing changes of editing/updating
@@ -40,7 +42,10 @@ function EditEvent(props) {
             ewin:ewin,
             eimg:eimg,
             elocation:elocation,
-            evid:evid
+            evid:evid,
+            ebudget:parseInt(ebudget),
+            ebudgetlink:ebudgetlink,
+
 
         });
         seteid("");
@@ -55,6 +60,8 @@ function EditEvent(props) {
         seteimg("");
         setelocation("");
         setevid("");
+        setebudget("");
+        setebudgetlink("");
      
     };
   
@@ -134,7 +141,19 @@ return (
                               onChange={e => setevid(e.target.value)}  
                               type="text" placeholder="Enter Video Link" />
             </Form.Group>
-  
+            
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control value={ebudget} 
+                              onChange={e => setebudget(e.target.value)}  
+                              type="number" placeholder="Enter Budget" />
+            </Form.Group>
+            
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control value={ebudgetlink} 
+                              onChange={e => setebudgetlink(e.target.value)}  
+                              type="text" placeholder="Enter Budget Link" />
+            </Form.Group>
+
             {/* Hadinling an onclick event running an edit logic */}
             <Button
                 onClick={e => handelSubmit(e)}

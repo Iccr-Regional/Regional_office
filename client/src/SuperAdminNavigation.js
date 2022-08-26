@@ -20,7 +20,7 @@ function SuperAdminNavigation() {
             <NavDropdown title="Add" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/addregionaloffice">Add Regional Office</NavDropdown.Item>
               <NavDropdown.Item href="/superadmin/addevent">Add Event</NavDropdown.Item>
-              <NavDropdown.Item href="/student">Add Student</NavDropdown.Item>
+              <NavDropdown.Item href="/superadmin/student">Add Student</NavDropdown.Item>
               <NavDropdown.Item href="/register">Add Admin</NavDropdown.Item>
             </NavDropdown >
             <Nav.Link href="/superadmin/statistics">Statistics</Nav.Link>
