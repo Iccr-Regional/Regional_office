@@ -56,8 +56,8 @@ function BarChart4() {
                 console.log("ressss",res)
                 for (const val of res)
                 {
-                    dataset2.push(val.name);
-                    dataSet1.push(val.ne);
+                    dataset2.push(val.rname);
+                    dataSet1.push(val.budget_remaining);
 
                 }
         setChartData({
@@ -69,7 +69,15 @@ function BarChart4() {
 
                    data:dataSet1,
                    borderColor:['rgba(255, 99,132,1)'],
-                   backgroundColor:['rgba(255, 99, 132, 0.5)',],
+                   backgroundColor:['rgba(53,162,235,0.2)',
+                                    'rgba(20,255,130,0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 54, 255, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(245, 0, 0, 0.2)',
+                                    'rgba(0,255,225,0.2)',],
                 },
             ],
         })

@@ -235,7 +235,7 @@ app.get('/chart3',(req,res)=>{
 });
 
 app.get('/chart4',(req,res)=>{
-    db.query("SELECT EXTRACT(year FROM edate) AS year, SUM(ebp) AS boys,SUM(egp) as girls FROM event GROUP BY EXTRACT(year FROM edate)",(err,result)=>{
+    db.query("SELECT scmoney,count(*) as np FROM `student` GROUP BY scmoney",(err,result)=>{
         if(err){
             console.log(err);
         } else {
@@ -245,7 +245,7 @@ app.get('/chart4',(req,res)=>{
 });
 
 app.get('/chart5',(req,res)=>{
-    db.query("SELECT r.rname AS name, n.ne AS ne from rooffice r,nevent n where r.rid=n.rid",(err,result)=>{
+    db.query("SELECT rname,(perbudget-curbudget) as budget_remaining from rooffice",(err,result)=>{
         if(err){
             console.log(err);
         } else {
