@@ -19,7 +19,10 @@ class AddRegionalOffice extends Component {
     submitMessageTextColor: "", 
     rid:"",
     rdesc:"",
+    rbudget:"",
     rlocation:"",
+    perbudget:"",
+    curbudget:""
     };
   }
 
@@ -31,7 +34,9 @@ class AddRegionalOffice extends Component {
       rname:this.state.rname,
       rimage:this.state.rimage,
       rlocation:this.state.rlocation,
-      rdesc:this.state.rdesc
+      rdesc:this.state.rdesc,
+      perbudget:parseInt(this.state.perbudget),
+      curbudget:parseInt(this.state.perbudget)
     }).then(()=>{
       console.log("success");
     })
@@ -44,6 +49,7 @@ class AddRegionalOffice extends Component {
     rname: "",
     rid:"",
     rdesc:"",
+    rbudget:"",
     rlocation:"",
     submitMessage: "",
     submitMessageTextColor: "",
@@ -112,20 +118,7 @@ class AddRegionalOffice extends Component {
               <div className="row px-3 px-lg-5">
                 <div className="col-12 col-lg-6 px-lg-5">
                   <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                      <br/><br/>
-                      <label htmlFor="eimg" style={{color:'white'}}>Image Url *</label><br/>
-                      <a href="https://postimages.org/" target="_blank" className=" text-right">Click here to upload images</a>
-                      <p className="text-left" style={{color:'white'}}>Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
-                      <input
-                        type="url"
-                        name="eimg"
-                        id="eimg"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                  </div>  
+                  
                   <div className="form-group">
                       <label htmlFor="rid" style={{color:'white'}}>Id *</label>
                       <input
@@ -158,13 +151,27 @@ class AddRegionalOffice extends Component {
                       <textarea name="rdesc"
                        id="rdesc" 
                        className="form-control" 
-                       onChange={this.onChange} 
+                       onChange={this.handleonChange} 
                        rows="10" cols="20" 
                        required/>
 
                     </div>
                     <div className="form-group">
+                      <label htmlFor="perbudget">Permenant Budget *</label>
+                      <input
+                        type="text"
+                        name="perbudget"
+                        id="perbudget"
+                        value={this.state.perbudget}
+                        className="form-control"
+                        onChange={this.handleonChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
                       <label htmlFor="rimage" style={{color:'white'}}>Image Url *</label>
+                      <a href="https://postimages.org/" target="_blank" className=" text-right">Click here to upload images</a>
+                      <p className="text-left" style={{color:'white'}}>Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
                       <input
                         type="url"
                         name="rimage"

@@ -1,64 +1,54 @@
 import React, { Component } from "react";
-import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import ReactMarkdown from "react-markdown";
 import { Consumer } from "./context";
-import { v4 as uuid } from "uuid";
 import AdminNavigation from "./AdminNavigation";
+import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
 import axios from "axios";
-import {Redirect} from "react-router-dom";
 import Footer from "./footer";
 
-
-class AddEvent extends Component {
+class Student extends Component {
   
- 
-
   constructor(props){
-       super(props);
-   /* if(!this.props.authorized){
-      return (< Redirect to="/login" />);
-    }  */
+    super(props);
+  
     this.state = {
-      eid:"",
-      ename: "",
-      edesc: "",
-      edate: "",
-      etime: "",
-      eimg:"",
-      rid: "",
-      enp: "",
-      ewin: "",
-      ebudget:"",
-      ebid:"",
-      elocation:"",
-      evid:"",
-      likes:"",
+      sid:"",
+      sname: "",
+      spno: "",
+      sdob: "",
+      passport: "",
+      gender:"",
+      mailid: "",
+      homecity: "",
+      cname: "",
+      ccity:"",
+      rid:"",
+      coname:"",
+      scmoney:"",
       submitMessage: "",
       submitMessageTextColor: "",
     };
   }
 
   state = {
-    eid:"",
-    ename: "",
-    edesc: "",
-    edate: "",
-    etime: "",
-    eimg:"",
-    rid: "",
-    enp: "",
-    ewin: "",
-    ebudget:"",
-    elocation:"",
-    evid:"",
-    ebid:"",
-    likes: "",
+    sid:"",
+    sname: "",
+    spno: "",
+    sdob: "",
+    passport: "",
+    gender:"",
+    mailid: "",
+    homecity: "",
+    cname: "",
+    ccity:"",
+    rid:"",
+    coname:"",
+    scmoney:"",
     submitMessage: "",
     submitMessageTextColor: "",
   };
 
-  handleonChange = (event) => {
+  onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -70,23 +60,22 @@ class AddEvent extends Component {
     });
   };
 
-  publishEventData=()=> {
+  publishStudentData=()=> {
    
-    axios.post('http://localhost:3001/insertevent',{
-      eid:parseInt(this.state.eid,10),
-      ename:this.state.ename,
+    axios.post('http://localhost:3001/insertstudent',{
+      sid:parseInt(this.state.sid,10),
+      sname:this.state.sname,
+      spno:parseInt(this.state.spno,10),
+      sdob:this.state.sdob,
+      passport:parseInt(this.state.passport,12),
+      gender:this.state.gender,
+      mailid:this.state.mailid,
+      homecity:this.state.homecity,
+      cname:this.state.cname,
+      ccity:this.state.ccity,
       rid:parseInt(this.state.rid,10),
-      edesc:this.state.edesc,
-      edate:this.state.edate,
-      etime:this.state.etime,
-      enp:parseInt(this.state.enp),
-      ewin:this.state.ewin,
-      ebudget:this.state.ebudget,
-      eimg:this.state.eimg,
-      elocation:this.state.elocation,
-      evid:this.state.evid,
-      ebid:this.state.ebid,
-      likes:this.state.likes
+      coname:this.state.coname,
+      scmoney:parseInt(this.state.scmoney)
       
   }).then(()=>{
     console.log("success");
@@ -99,7 +88,7 @@ class AddEvent extends Component {
 
 onSubmit = event => {
   event.preventDefault();
-  this.publishEventData();
+  this.publishStudentData();
   console.log("on submitted");
   let isSuccessful = true;
 
@@ -115,23 +104,6 @@ onSubmit = event => {
     });
   }
 
-  const newEvent = {
-    eid: this.state.eid,
-    ename: this.state.ename,
-    edesc: this.state.edesc,
-    edate: this.state.edate,
-    etime: this.state.etime,
-    eimg:this.state.eimg,
-    rid: this.state.rid,
-    enp: this.state.enp,
-    ewin: this.state.ewin,
-    ebudget:this.state.ebudget,
-    elocation: this.state.elocation,
-    evid: this.state.evid,
-    ebid:this.state.ebid,
-    likes: this.state.likes,
-  };
-
 };
 
   render() {
@@ -139,23 +111,11 @@ onSubmit = event => {
       <Consumer>
         {(value) => {
           const {
-            //eid,
-            ename,
-            edesc,
-            edate,
-            etime,
-            eimg,
-            rid,
-            enp,
-            ewin,
-            ebudget,
-            elocation,
-            evid,
-            ebid,
+       
             submitMessage,
             submitMessageTextColor,
           } = this.state;
-          const { handler } = value;
+         
 
           return (
             <div>
@@ -163,177 +123,178 @@ onSubmit = event => {
                 <source src={require("./video.mp4.mp4")} type="video/mp4"/>
             </video>
             <AdminNavigation/>
-            <br/>
-            <br/>
             <div className="container-fluid">
               <h1 className="text-center my-5 py-5 font-weight-light">
-                Add Event
+                Student Details
               </h1>
               <div className="row px-3 px-lg-5">
                 <div className="col-sm-0 col-md-3"></div>
                 <div className="col-12 col-md-6 px-lg-5">
                   <div className="card shadow h-100 bg-light">
-                  <form onSubmit={this.onSubmit.bind(this, handler)}>
-                    <br/>
+                  <form onSubmit={this.onSubmit}>
+                    <br/><br/>
                     <div className="form-group px-5">
-                      <label htmlFor="rnp">Event Id *</label>
+                      <label htmlFor="sname">Student Id *</label>
                       <input
                         type="number"
-                        name="eid"
-                        id="eid"
+                        name="sid"
+                        id="sid"
                         className="form-control"
                         onChange={this.onChange}
                         required
                       />
                     </div>
                     <div className="form-group px-5">
-                      <label htmlFor="ename">Event Name *</label>
+                      <label htmlFor="sname">Student Name *</label>
                       <input
                         type="text"
-                        name="ename"
-                        id="ename"
+                        name="sname"
+                        id="sname"
                         className="form-control"
                         onChange={this.onChange}
                         required
                       />
                     </div>
                     <div className="form-group px-5">
-                      <label htmlFor="rid">Regional Office Id * </label>
+                      <label htmlFor="spno">Phone Number *</label>
+                      <input
+                        type="number"
+                        name="spno"
+                        id="spno"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="sdob">Date of birth *</label>
+                      <input
+                        type="date"
+                        name="sdob"
+                        id="sdob"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="passport">Passport Number * </label>
+                      <input
+                        type="number"
+                        name="passport"
+                        id="passport"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    {/* <div className="form-group px-5">
+                      <label htmlFor="gender">Gender *</label>
+                      <input
+                        type="text"
+                        name="gender"
+                        id="gender"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div> */}
+                    <div className="form-group px-5">
+                      <label htmlFor="gender">Gender *</label>
+                      <br/>
+                      <input
+                        type="radio"
+                        name="male"
+                        id="gender"
+                        className=""
+                        onChange={this.onChange}
+                        required
+                      />Male
+                      <input
+                        type="radio"
+                        name="female"
+                        id="gender"
+                        className=""
+                        onChange={this.onChange}
+                        required
+                      />Female
+                      
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="mailid">Email *</label>
+                      <input
+                        type="email"
+                        name="mailid"
+                        id="mailid"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="homecity">Home City *</label>
+                      <input
+                        type="text"
+                        name="homecity"
+                        id="homecity"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="form-group px-5">
+                      <label htmlFor="cname">College Name*</label>
+                      <input
+                        type="text"
+                        name="cname"
+                        id="cname"
+                        className="form-control"
+                        onChange={this.onChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="ccity">College City* </label>
+                      <input
+                        type="text"
+                        name="ccity"
+                        id="ccity"
+                        className="form-control"
+                        onChange={this.onChange}
+                      />
+                    </div>
+                    <div className="form-group px-5">
+                      <label htmlFor="rid">Rid*</label>
                       <input
                         type="number"
                         name="rid"
                         id="rid"
                         className="form-control"
                         onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="edesc">About *</label>
-                      <textarea name="edesc" id="edesc" className="form-control" onChange={this.onChange} rows="10" cols="20" required/>
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="edate">Start Date *</label>
-                      <input
-                        type="date"
-                        name="edate"
-                        id="edate"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="etime">Time *</label>
-                      <input
-                        type="time"
-                        name="etime"
-                        id="etime"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="form-group px-5">
-                      <label htmlFor="rnp">No.of Boys participated </label>
-                      <input
-                        type="number"
-                        name="ebp"
-                        id="ebp"
-                        className="form-control"
-                        onChange={this.onChange}
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="rnp">No.of Girls participated </label>
-                      <input
-                        type="number"
-                        name="egp"
-                        id="egp"
-                        className="form-control"
-                        onChange={this.onChange}
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="ewin">Winner Name </label>
-                      <input
-                        type="text"
-                        name="ewin"
-                        id="ewin"
-                        className="form-control"
-                        onChange={this.onChange}
                       />
                       </div>
                       <div className="form-group px-5">
-                      <label htmlFor="ebudget">Budget </label>
+                      <label htmlFor="coname">Course</label>
                       <input
                         type="text"
-                        name="ebudget"
-                        id="ebudget"
+                        name="coname"
+                        id="coname"
                         className="form-control"
                         onChange={this.onChange}
-                        required
                       />
                     </div> 
-                    
                     <div className="form-group px-5">
-                      <label htmlFor="evid">Budget proofs drive Link </label>
+                      <label htmlFor="scmoney">ScholarShip Amount* </label>
                       <input
-                        type="url"
-                        name="ebid"
-                        id="ebid"
+                        type="number"
+                        name="scmoney"
+                        id="scmoney"
                         className="form-control"
                         onChange={this.onChange}
                       />
                     </div>
 
-                    <div className="form-group px-5 markdown">
-                      <label htmlFor="eimg">Image Url *</label><br/>
-                      <a href="https://postimages.org/" target="_blank" className=" text-right">Click here to upload images</a>
-                      <p className="text-left">Click on choose images and select the image you want to upload. You can also change the size of the image if you want. After uploading you will be given the links for image. Copy the link and paste it below.</p>
-                      <input
-                        type="url"
-                        name="eimg"
-                        id="eimg"
-                        className="form-control"
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group px-5 markdown">
-                      <label htmlFor="rimage">Event Image Gallery(Insert your drive link here)</label>
-                      <input
-                        type="url"
-                        name="rimage"
-                        id="rimage"
-                        value={this.state.rimage}
-                        className="form-control"
-                        onChange={this.handleonChange}
-                        
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="evid">Video Link </label>
-                      <input
-                        type="url"
-                        name="evid"
-                        id="evid"
-                        className="form-control"
-                        onChange={this.onChange}
-                      />
-                    </div>
-                    <div className="form-group px-5">
-                      <label htmlFor="elocation">Location </label>
-                      <input
-                        type="url"
-                        name="elocation"
-                        id="elocation"
-                        className="form-control"
-                        onChange={this.onChange}
-                        
-                      />
-                    </div>
                     
                    <div className="d-flex justify-content-around">
                     <button
@@ -369,4 +330,4 @@ onSubmit = event => {
     );
   }
 }
-export default AddEvent;
+export default Student;

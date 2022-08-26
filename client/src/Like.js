@@ -4,7 +4,7 @@ class Like extends Component{
         super(props);
         this.state={
             clicks:0,
-            click:Number(props.e.elikes),
+            click:0,
             show:true,
             
         };

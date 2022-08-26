@@ -1,7 +1,7 @@
 import React from "react";
 import SuperAdminNavigation from "./SuperAdminNavigation";
 import { Consumer } from "./context";
-import CurrentEventCard from "./CurrentEventCard";
+import SuperAdminCurrentEventCard from "./SuperAdminCurrentEventCard";
 
 function SuperAdminAllCurrentEvents(props) {
   return (
@@ -18,7 +18,7 @@ function SuperAdminAllCurrentEvents(props) {
             <div className="row my-4 pt-4">
               {sortedCurrentEvents.map((currentEvent) => (
                 <div key={currentEvent.eid} className="col-12 col-md-6 py-3">
-                  <CurrentEventCard currentEvent={currentEvent} />
+                  <SuperAdminCurrentEventCard currentEvent={currentEvent} />
                 </div>
               ))}
             </div>  

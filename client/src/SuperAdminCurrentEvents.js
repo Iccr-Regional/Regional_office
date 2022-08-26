@@ -1,12 +1,27 @@
 import React from "react";
-import CurrentEventCard from "./CurrentEventCard";
+import SuperAdminCurrentEventCard from "./SuperAdminCurrentEventCard";
 import { Link } from "react-router-dom";
 import { Consumer } from "./context";
+import {useEffect,useState} from "react";
+import Axios from "axios";
 function SuperAdminCurrentEvents(props) {
+  const [events,setEvents]=useState([]);
+  const Display = ()=>{
+    Axios.get('http://localhost:3001/getEvents').then((response)=>{
+      console.log(response.data);
+      setEvents(response.data);
+    }).catch(err=>{
+      console.log(err)
+    });
+  };
+
+ useEffect(()=>{
+  Display();
+ },[])
   return (
     <Consumer>
       {(value) => {
-        const { events } =value;
+       // const { events } =value;
         const sortedActivities = events.sort((a, b) => new Date(b.edate) - new Date(a.edate));  
         const sdate=new Date();
         sdate.setHours(0, 0, 0, 0);
@@ -25,7 +40,7 @@ function SuperAdminCurrentEvents(props) {
             <div className="row d-flex justify-content-around my-5 pt-3">
                {sortedCurrentEvents.slice(0,2).map((currentEvent) => (
                   <div key={currentEvent.eid} className="col-12 col-md-5 my-2">
-                  <CurrentEventCard currentEvent={currentEvent} />
+                  <SuperAdminCurrentEventCard currentEvent={currentEvent} />
             </div>
             ))}
         </div>

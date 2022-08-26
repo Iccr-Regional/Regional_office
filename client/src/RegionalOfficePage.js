@@ -3,9 +3,11 @@ import Map from './Map';
 import React from 'react'
 import BarChart1  from './BarChart1';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import Navigation from './Navigation';
 import RegionalEvents from "./RegionalEvents";
 import Footer from './footer';
+import { NavDropdown } from 'react-bootstrap';
 
 
 
@@ -13,6 +15,16 @@ const RegionalOfficePage = (props) => {
   const id = props.match.params.id;
   console.log(id);
   const regionalOffice = useLocation().state?.office;
+  const [name,setname]=useState("events");
+        const onclick1=()=>{
+           setname("events");
+        };
+        const onclick2=()=>{
+           setname("ro");
+        };
+        const onclick3=()=>{
+           setname("scholarship");
+        };
 
   return (
     <div>
@@ -28,8 +40,13 @@ const RegionalOfficePage = (props) => {
         <RegionalEvents rId={regionalOffice.rid} />
       </div>
     </div>
-    <BarChart1/>
-    {/* <Map rLocation={regionalOffice.rlocation}/> */}
+    <NavDropdown title="Bar Charts" id="collasible-nav-dropdown">
+              <NavDropdown.Item ><button onClick={onclick1}>Based on events</button> </NavDropdown.Item>
+              <NavDropdown.Item><button onClick={onclick2}>Based on regional office</button></NavDropdown.Item>
+              <NavDropdown.Item ><button onClick={onclick3}>Based on scholarship</button></NavDropdown.Item>
+            </NavDropdown>
+            <BarChart1 name={name}/>
+    
     <Footer/>
   </div>
   );

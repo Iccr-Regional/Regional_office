@@ -19,10 +19,12 @@ app.post('/create',(req,res) => {
     const rimage=req.body.rimage;
     const rlocation=req.body.rlocation;
     const rdesc=req.body.rdesc;
+    const perbudget=req.body.perbudget;
+    const curbudget=req.body.curbudget;
     console.log(req.body)
 
-    db.query('INSERT INTO rooffice (rid,rname,rimage,rlocation,rdesc)VALUES (?,?,?,?,?)',
-    [rid,rname,rimage,rlocation,rdesc],
+    db.query('INSERT INTO rooffice (rid,rname,rimage,rlocation,rdesc,perbudget,curbudget,rbp,rgp)VALUES (?,?,?,?,?,?,?,0,0)',
+    [rid,rname,rimage,rlocation,rdesc,perbudget,curbudget],
     (err,result) =>{
         if(err){
             console.log(err);
@@ -33,7 +35,6 @@ app.post('/create',(req,res) => {
     }
     );
 });
-
 app.post('/insertevent',(req,res) => {
     const eid=req.body.eid;
     const ename=req.body.ename;
@@ -48,10 +49,11 @@ app.post('/insertevent',(req,res) => {
     const edrive=req.body.edrive;
     const elocation=req.body.elocation;
     const evid=req.body.evid;
+    const ebudget=req.body.ebudget;
     const likes=req.body.likes;
     console.log(req.body)
 
-    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid,likes)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0)',
+    db.query('INSERT INTO event (eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
     [eid,ename,rid,edesc,edate,etime,ebp,egp,ewin,eimg,edrive,elocation,evid],
     (err,result) =>{
         if(err){
@@ -97,6 +99,46 @@ app.post('/validate',(req,res)=>{
             res.send({message: "Wrong username/password combination"});
 
         }
+    });
+});
+
+app.post('/insertstudent',(req,res) => {
+    const sid=req.body.sid;
+    const sname=req.body.sname;
+    const spno=req.body.spno;
+    const sdob=req.body.sdob;
+    const passport=req.body.passport;
+    const gender=req.body.gender;
+    const mailid=req.body.mailid;
+    const homecity=req.body.homecity;
+    const cname=req.body.cname;
+    const ccity=req.body.ccity;
+    const rid=req.body.rid;
+    const coname=req.body.coname;
+    const scmoney=req.body.scmoney;
+    
+    console.log(req.body)
+
+    db.query('INSERT INTO student (sid,sname,spno,sdob,passport,gender,mailid,homecity,cname,ccity,rid,coname,scmoney)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+    [sid,sname,spno,sdob,passport,gender,mailid,homecity,cname,ccity,rid,coname,scmoney],
+    (err,result) =>{
+        if(err){
+            console.log(err);
+        } else{
+            res.send();
+        }
+    
+    }
+    );
+    db.query('UPDATE rooffice SET rbp=rbp+1 WHERE gender="Male',
+    (err,result) =>{
+        if(err){
+            console.log(err);}
+    });
+    db.query('UPDATE rooffice SET rgp=rgp+1 WHERE gender="Female',
+    (err,result) =>{
+        if(err){
+            console.log(err);}
     });
 });
 
@@ -153,7 +195,7 @@ app.put("/updateregionaloffice", (req,res) => {
 });
 
 app.get('/chart1',(req,res)=>{
-    db.query("SELECT ne from nevent",(err,result)=>{
+    db.query("SELECT r.rname AS name, n.ne AS ne from rooffice r,nevent n where r.rid=n.rid",(err,result)=>{
         if(err){
             console.log(err);
         } else {
@@ -161,8 +203,39 @@ app.get('/chart1',(req,res)=>{
         }
     });
 });
+
 app.get('/chart2',(req,res)=>{
     db.query("SELECT EXTRACT(year FROM edate) AS year, SUM(ebp) AS boys,SUM(egp) as girls FROM event GROUP BY EXTRACT(year FROM edate)",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/chart3',(req,res)=>{
+    db.query("select rname AS year,rnp AS boys,rgp AS girls from rooffice ",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/chart4',(req,res)=>{
+    db.query("SELECT EXTRACT(year FROM edate) AS year, SUM(ebp) AS boys,SUM(egp) as girls FROM event GROUP BY EXTRACT(year FROM edate)",(err,result)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/chart5',(req,res)=>{
+    db.query("SELECT r.rname AS name, n.ne AS ne from rooffice r,nevent n where r.rid=n.rid",(err,result)=>{
         if(err){
             console.log(err);
         } else {

@@ -1,8 +1,25 @@
 import React from "react";
-import RegionalOfficeCard from "./RegionalOfficeCard";
+import AdminRegionalOfficeCard from "./AdminRegionalOfficeCard";
 import { Consumer } from "./context";
 import { Link } from "react-router-dom";
+import{useEffect,useState} from "react";
+import Axios from "axios";
 function AdminRegionalOfficeSection() {
+  
+
+  const [regionalOffice,setregionaloffice]=useState([]);
+  const Display = ()=>{
+    Axios.get('http://localhost:3001/getregionaloffice').then((response)=>{
+      console.log(response.data);
+      setregionaloffice(response.data);
+    }).catch(err=>{
+      console.log(err)
+    });
+  };
+
+ useEffect(()=>{
+  Display();
+ },[])
   return (
     <Consumer>
       {(value) => {
@@ -13,9 +30,9 @@ function AdminRegionalOfficeSection() {
               Regional Offices
             </h1>
             <div className="row my-5 pt-3">
-              {regionalOffices.slice(0, 3).map((regionalOffice) => (
-                <div key={regionalOffice.rid} className="col-12 col-md-4 my-2">
-                  <RegionalOfficeCard regionalOffice={regionalOffice} />
+              {regionalOffice.slice(0, 3).map((office) => (
+                <div key={office.rid} className="col-12 col-md-4 my-2">
+                  <AdminRegionalOfficeCard regionalOffice={office} />
                 </div>
               ))}
             </div>

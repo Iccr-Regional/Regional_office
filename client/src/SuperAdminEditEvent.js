@@ -5,23 +5,24 @@ import { Link} from 'react-router-dom';
 import axios from 'axios';
 
   
-function EditEvent(props) {
-    const Event=props.location.state;
+function SuperAdminEditEvent(props) {
+    const Events1=props.location.state;
+  
     // Here usestate has been used in order
     // to set and get values from the jsx
-    const [eid, seteid] = useState(Event.eid);
-    const[rid,setrid]=useState(Event.rid);
-    const [ename, setename] = useState(Event.ename);
-    const[edesc,setedesc] = useState(Event.edesc);
-    const [edate, setedate] = useState(Event.edate);
-    
-    const [etime, setetime] = useState(Event.etime);
-    const[ebp,setebp] = useState(Event.ebp);
-    const[egp,setegp] = useState(Event.egp);
-    const [ewin, setewin] = useState(Event.ewin);
-    const [eimg, seteimg] = useState(Event.eimg);
-    const[elocation,setelocation] = useState(Event.elocation);
-    const [evid, setevid] = useState(Event.evid);
+    const [eid, seteid] = useState(Events1.eid);
+    const[rid,setrid]=useState(Events1.rid);
+    const [ename, setename] = useState(Events1.ename);
+    const[edesc,setedesc] = useState(Events1.edesc);
+    const [estartdate, setestartdate] = useState(Events1.estartdate);
+    const [eenddate, seteenddate] = useState(Events1.eenddate);
+    const [etime, setetime] = useState(Events1.etime);
+    const[ebp,setebp] = useState(Events1.ebp);
+    const[egp,setegp] = useState(Events1.egp);
+    const [ewin, setewin] = useState(Events1.ewin);
+    const [eimg, seteimg] = useState(Events1.eimg);
+    const[elocation,setelocation] = useState(Events1.elocation);
+    const [evid, setevid] = useState(Events1.evid);
   
     // function for handling the edit and 
     // pushing changes of editing/updating
@@ -32,8 +33,8 @@ function EditEvent(props) {
             rid:parseInt(rid),
             ename:ename,
             edesc:edesc,
-           
-            edate:edate,
+            estartdate:eenddate,
+            eenddate:eenddate,
             etime:etime,
             ebp:parseInt(ebp),
             egp:parseInt(egp),
@@ -46,8 +47,8 @@ function EditEvent(props) {
         seteid("");
         setename("");
         setedesc("");
-       
-        setedate("");
+        setestartdate("");
+        seteenddate("");
         setetime("");
         setebp("");
         setegp("");
@@ -88,9 +89,15 @@ return (
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control value={edate} 
-                              onChange={e => setedate(e.target.value)}  
-                              type="date" placeholder="Enter date" />
+                <Form.Control value={estartdate} 
+                              onChange={e => setestartdate(e.target.value)}  
+                              type="date" placeholder="Enter start date" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control value={eenddate} 
+                              onChange={e => seteenddate(e.target.value)}  
+                              type="date" placeholder="Enter end date" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -151,4 +158,4 @@ return (
   )
 }
   
-export default EditEvent;
+export default SuperAdminEditEvent;

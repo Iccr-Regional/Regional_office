@@ -1,7 +1,7 @@
 import React from "react";
 import { Consumer } from "./context";
 import AdminNavigation from "./AdminNavigation";
-import RegionalEvents from "./RegionalEvents";;
+import AdminRegionalEvents from "./AdminRegionalEvents";
 
 function AdminRegionalOfficePage(props) {
   return (
@@ -11,7 +11,7 @@ function AdminRegionalOfficePage(props) {
         const id = props.match.params.id;
         const regionalOffice = regionalOffices.filter((regionalOffice) => regionalOffice.rid == id)[0];
         const { rimage, rname, rdesc, rlocation } = regionalOffice;
-        const rOName = rname;
+        const rId = regionalOffice.rid;
         return (
           <div>
           <AdminNavigation/>
@@ -23,7 +23,7 @@ function AdminRegionalOfficePage(props) {
             <h1 className="font-weight-light  text-center my-5">Address: {rlocation}</h1>
             <p className="font-weight-light text-center my-5">{rdesc}</p>
             <div className="p-5">
-                <RegionalEvents rOName={rOName}/>
+                <AdminRegionalEvents rId={regionalOffice.rid}/>
             </div>
           </div>
           </div>

@@ -3,6 +3,8 @@ import { Consumer } from "./context";
 import Like from "./Like";
 import Navigation from "./Navigation";
 import Footer from "./footer";
+import { Link } from "react-router-dom";
+
 
 import { useLocation } from 'react-router-dom';
 function PastEventPage(props) {
@@ -16,6 +18,15 @@ function PastEventPage(props) {
           <Navigation/>
           <div className="container py-5 my-5 markdown">
             <Like/>
+            <Link to={{  pathname: "/editevent",  state: events }}>
+                <button
+                      type="submit"
+                      className="btn btn-dark align-items-right"
+                      style={{ backgroundColor: "black" }}
+                    >
+                      Edit
+                    </button>
+                </Link>
             <div className="row justify-content-center">
               <div className="col-12 col-md-6 ">
                 <img src={events.eimg} alt={events.ename} className="w-100" />

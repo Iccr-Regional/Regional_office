@@ -46,7 +46,7 @@ function BarChart() {
         const fetchData=async()=>{
 
             const url='http://localhost:3001/chart1'
-
+            const dataset2=[];
             const dataSet1=[];
          fetch (url).then((data)=>{
             console.log("Api data",data)
@@ -56,12 +56,12 @@ function BarChart() {
                 console.log("ressss",res)
                 for (const val of res)
                 {
-
+                    dataset2.push(val.name);
                     dataSet1.push(val.ne);
 
                 }
         setChartData({
-            labels: ["Delhi University","Ahmedabad","Bangalore","Guwahati","Jammu","Kolkata","Lucknow","Mumbai","Patna","Pune","Shillong"],
+            labels:dataset2,
             datasets: [
                 {
 
@@ -73,7 +73,7 @@ function BarChart() {
                 },
             ],
         })
-        console.log("arrData",dataSet1)
+        console.log("arrData",dataSet1,dataset2)
             }).catch(e=>{
                 console.log("error",e)
             })

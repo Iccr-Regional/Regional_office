@@ -44,6 +44,7 @@ function BarChart() {
 
     useEffect(() => {
         const fetchData=async()=>{
+            
             const url='http://localhost:3001/chart2'
             const dataSet1=[];
             const dataSet2=[];

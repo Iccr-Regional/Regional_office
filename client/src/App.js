@@ -14,6 +14,8 @@ import AllRegionalOffices from "./AllRegionalOffices";
 import RegionalOfficePage from "./RegionalOfficePage";
 import AddEvent from "./AddEvent";
 import Forget from "./Forget";
+import SuperAdminFutureEventPage from "./SuperAdminFutureEventPage";
+import SuperAdminPastEventPage from "./SuperAdminPastEventPage";
 import EditEvent from "./EditEvent";
 import AddRegionalOffice from "./AddRegionalOffice";
 import Login from "./Login";
@@ -23,6 +25,13 @@ import SuperAdminAddEvent from "./SuperAdminAddEvent";
 import SuperAdminHomePage from "./SuperAdminHomePage";
 import Support from "./Support";
 import Contact from "./Contact";
+import AdminAllFutureEvents from "./AdminAllFutureEvents"
+import SuperAdminEditEvent from "./SuperAdminEditEvent";
+import AdminCurrentEventPage from "./AdminCurrentEventPage";
+import AdminFutureEventPage from "./AdminFutureEventPage";
+import SuperAdminCurrentEventPage from "./SuperAdminCurrentEventPage";
+import AdminRegionalOfficePage from "./AdminRegionalOfficePage";
+import SuperAdminRegionalOfficePage from "./SuperAdminRegionalOfficePage";
 import AdminAllCurrentEvents from "./AdminAllCurrentEvents";
 import SuperAdminAllCurrentEvents from "./SuperAdminAllCurrentEvents";
 import SuperAdminAllRegionalOffices from "./SuperAdminAllRegionalOffices";
@@ -31,8 +40,11 @@ import Register from "./register";
 import loading from "./loading";
 import background from "./background";
 import Footer from "./footer";
+import SuperAdminAllFutureEvents from "./SuperAdminAllFutureEvents";
+import AdminPastEventPage from "./AdminPastEventPage";
 import EditRegionaloffice from "./EditRegionaloffice";
 import SortedByLikes from "./SortedByLikes";
+import AdminAllPastEvents from "./AdminAllPastEvents";
 function App() {
   return (
     <Provider>
@@ -45,19 +57,31 @@ function App() {
           <Route exact path="/superadmin" component={SuperAdminHomePage}/>
           <Route exact path="/regionaloffice/:id/allpastevents" component={AllPastEvents}/>
           <Route exact path="/allcurrentevents" component={AllCurrentEvents}/>
+          <Route exact path="/allcurrentevents" component={AdminAllPastEvents}/>
           <Route exact path="/admin/allcurrentevents" component={AdminAllCurrentEvents}/>
+          <Route exact path="/superadmin/allfutureevents" component={SuperAdminAllFutureEvents}/>
           <Route exact path="/superadmin/allcurrentevents" component={SuperAdminAllCurrentEvents}/>
           <Route exact path="/allregionaloffices" component={AllRegionalOffices}/>
           <Route exact path="/admin/allregionaloffices" component={AdminAllRegionalOffices}/>
+          <Route exact path="/superadmin/futureevent/:id" component={SuperAdminFutureEventPage} />
           <Route exact path="/superadmin/allregionaloffices" component={SuperAdminAllRegionalOffices}/>
           <Route exact path="/regionaloffice/:id/allfutureevents" component={AllFutureEvents} />
           <Route exact path="/pastevent/:id" component={PastEventPage} />
+          <Route exact path="/superadmin/pastevent/:id" component={SuperAdminPastEventPage} />
+          <Route exact path="/admin/pastevent/:id" component={AdminPastEventPage} />
           <Route exact path="/currentevent/:id" component={CurrentEventPage}/>
+          <Route exact path="/admin/allfutureevents" component={AdminAllFutureEvents} />
+          <Route exact path="/superadmin/editevent" component={SuperAdminEditEvent} />
+          <Route exact path="/admin/currentevent/:id" component={AdminCurrentEventPage}/>
+          <Route exact path="/admin/futureevent/:id" component={AdminFutureEventPage}/>
+          <Route exact path="/superadmin/currentevent/:id" component={SuperAdminCurrentEventPage}/>
           <Route exact path="/futureevent/:id" component={FutureEventPage} />
           <Route exact path="/regionaloffice/:id" component={RegionalOfficePage} />
+          <Route exact path="/admin/regionaloffice/:id" component={AdminRegionalOfficePage}/>
+          <Route exact path="/superadmin/regionaloffice/:id" component={SuperAdminRegionalOfficePage}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/addevent" component={AddEvent}  />
-          <Route exact path="/editevent" component={EditEvent}/>
+          <Route exact path="/admin/editevent" component={EditEvent}/>
           <Route exact path="/editregionaloffice" component={EditRegionaloffice}/>
           <Route exact path="/addregionaloffice" component={AddRegionalOffice} />
           <Route exact path="/addevents" component={SuperAdminAddEvent}/>

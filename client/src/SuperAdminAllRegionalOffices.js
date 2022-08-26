@@ -1,9 +1,9 @@
 import React from "react";
 import { Consumer } from "./context";
-import RegionalOfficeCard from "./RegionalOfficeCard";
+import SuperAdminRegionalOfficeCard from "./SuperAdminRegionalOfficeCard";
 import {useEffect,useState} from "react";
 import Axios from "axios";
-function AdminAllRegionalOffices() {
+function SuperAdminAllRegionalOffices() {
   const [regionalOffice,setregionaloffice]=useState([]);
   const Display = ()=>{
     Axios.get('http://localhost:3001/getregionaloffice').then((response)=>{
@@ -29,7 +29,7 @@ function AdminAllRegionalOffices() {
             <div className="row my-4 pt-4">
               {regionalOffice.map((office) => (
                 <div key={office.rid} className="col-12 col-md-6 py-3">
-                  <RegionalOfficeCard regionalOffice={office} />
+                  <SuperAdminRegionalOfficeCard regionalOffice={office} />
                 </div>
               ))}
             </div>
@@ -40,4 +40,4 @@ function AdminAllRegionalOffices() {
   );
 }
 
-export default AdminAllRegionalOffices;
+export default SuperAdminAllRegionalOffices;
